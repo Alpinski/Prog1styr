@@ -1,0 +1,5 @@
+﻿  WinLoseX.cpp
+  Source.cpp
+  Generating Code...
+c:\users\s171102\documents\visual studio 2015\projects\tictactoe\tictactoe\winlosex.cpp(73): warning C4715: 'WinLoseX::CheckWinX': not all control paths return a value
+  TicTacToe.vcxproj -> C:\Users\s171102\Documents\Visual Studio 2015\Projects\TicTacToe\Debug\TicTacToe.exe
