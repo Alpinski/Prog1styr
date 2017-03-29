@@ -1,5 +1,6 @@
-#include <iostream>
 #include "Zombie.h"
+#include <iostream>
+
 
 
 
@@ -12,16 +13,16 @@ Zombie::Zombie()
 	int nRandOcc = rand() % 10;
 	switch (nRandOcc)
 	{
-		case 0:		m_szOccupation = "Brain Doctor ";		break;
-		case 1:		m_szOccupation = "Beautician ";		break;
-		case 2:		m_szOccupation = "Zoologist ";		break;
-		case 3:		m_szOccupation = "Student ";		break;
-		case 4:		m_szOccupation = "Dentist ";		break;
-		case 5:		m_szOccupation = "Dermatologist ";		break;
-		case 6:		m_szOccupation = "Fireman ";		break;
-		case 7:		m_szOccupation = "Brain Eating Champ ";		break;
-		case 8:		m_szOccupation = "Pro Gamer ";		break;
-		case 9:		m_szOccupation = "Dead Man ";		break;
+		case 0:		m_szOccupation = "Zombie ";	break;
+		case 1:		m_szOccupation = "Runner Zombie ";		break;
+		case 2:		m_szOccupation = "Walker Zombie ";		break;
+		case 3:		m_szOccupation = "Voodoo Zombie ";		break;
+		case 4:		m_szOccupation = "Melting Zombie ";		break;
+		case 5:		m_szOccupation = "Carrier Zombie ";	break;
+		case 6:		m_szOccupation = "Stalker Zombie ";		break;
+		case 7:		m_szOccupation = "Radioactive Zombie ";			break;
+		case 8:		m_szOccupation = "Spitter Zombie ";		break;
+		case 9:		m_szOccupation = "Suicide Zombie ";		break;
 	}
 }
 
