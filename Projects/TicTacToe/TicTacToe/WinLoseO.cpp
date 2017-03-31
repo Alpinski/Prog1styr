@@ -12,57 +12,67 @@ WinLoseO::~WinLoseO()
 {
 }
 
-void WinLoseO::CheckWinO(char square [3][3])
+bool WinLoseO::CheckWinO(char square [3][3])
 {
-	if (square[1] == square[2] && square[2] == square[3])
+	if (square[0][0] == square[0][1] && square[0][1] == square[0][2])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
+	}
+	else if (square[1][0] == square[1][1] && square[1][1] == square[1][2])
+	{
 
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[4] == square[5] && square[5] == square[6])
+	else if (square[2][0] == square[2][1] && square[2][1] == square[2][2])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[7] == square[8] && square[8] == square[9])
+	else if (square[0][0] == square[1][0] && square[1][0] == square[2][0])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[1] == square[4] && square[4] == square[7])
+	else if (square[0][1] == square[1][1] && square[1][1] == square[2][1])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[2] == square[5] && square[5] == square[8])
+	else if (square[0][2] == square[1][2] && square[1][2] == square[2][2])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[3] == square[6] && square[6] == square[9])
+	else if (square[0][0] == square[1][1] && square[1][1] == square[2][2])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[1] == square[5] && square[5] == square[9])
+	else if (square[0][2] == square[1][1] && square[1][1] == square[2][0])
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		cout << "PlayerO is the Winner!" << endl;
+		cout << "PlayerX SUX!" << endl;
+		++ScoreO;
+		return true;
 	}
-	else if (square[3] == square[5] && square[5] == square[7])
+	else
 	{
-		Win = true;
-		cout << "Player2" << endl;
-		cout << "Winner!" << endl;
+		return false;
 	}
-
 }
-

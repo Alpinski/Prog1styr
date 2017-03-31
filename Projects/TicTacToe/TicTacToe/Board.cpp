@@ -13,7 +13,7 @@ Board::~Board()
 {
 }
 
-void Board::PlayField()
+void Board::PlayField(int ScoreX, int ScoreO)
 {
 	system("cls");
 	cout << "		         Tic Tac Toe      " << endl;
@@ -35,4 +35,22 @@ void Board::PlayField()
 	cout << " 			" << square[2][0] << "  |  " << square[2][1] << "  |  " << square[2][2] << endl;
 
 	cout << "			   |     |     " << endl << endl;
+
+	cout << endl;
+
+	cout << "PlayerX: " << ScoreX<< "				" << "Player0: " << ScoreO << endl;;
+
+
+}
+
+void Board::Reset()
+{
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{ 
+			square[i][j] = 
+		}
+		square[3][3] = { '1','2','3','4','5','6','7','8','9' };
+	}
 }

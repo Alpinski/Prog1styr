@@ -4,7 +4,8 @@ class WinLoseX
 public:
 	WinLoseX();
 	~WinLoseX();
-	void WinLoseX::CheckWinX(char square[3][3]);
+	bool WinLoseX::CheckWinX(char square[3][3]);
+	int ScoreX = 0;
 protected:
 	bool Win = false;
 };

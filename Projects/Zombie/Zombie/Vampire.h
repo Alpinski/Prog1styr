@@ -12,10 +12,10 @@ public:
 
 	char* GetOccupation();
 
-	void LifeSteal(int nLifeSteal);
+	void LifeSteal();
 
 private:
-	int m_nLifesteal;
+
 	int m_nVHealth;
 	int m_nVAttack;
 	char* m_svOccupation;

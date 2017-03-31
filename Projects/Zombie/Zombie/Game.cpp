@@ -1,7 +1,11 @@
 #include "Game.h"
 #include <iostream>
+#include <Windows.h>
+
 
 using namespace std;
+
+WORD GetConsoleTextAttribute(HANDLE hCon);
 
 Game::Game(int nZombieCount, int nVampireCount)
 {
@@ -59,7 +63,28 @@ bool Game::Update()
 			}
 		}
 	}
-		//fight
+	if (m_nVampiresLeft > 1)
+	{
+		for (int i = 0; i < m_nVampiresLeft - 1; ++i)
+		{
+			for (int j = 0; j < (m_nVampiresLeft - 1); ++j)
+			{
+				if (m_apVampires[j]->GetHealth() > m_apVampires[j + 1]->GetHealth())
+				{
+					Vampire* temp = m_apVampires[j];
+					m_apVampires[j] = m_apVampires[j + 1];
+					m_apVampires[j + 1] = temp;
+				}
+			}
+		}
+	}
+
+
+
+
+	//----------------------------------------------------------
+	//The fight sequence for the Vampires vs Zombies
+	//----------------------------------------------------------
 		int nRandZombie = rand() % m_nVampireCount;
 		int nRandVampire = rand() % m_nVampireCount;
 		
@@ -76,6 +101,8 @@ bool Game::Update()
 			if (nRandZombie != nRandVampire)
 			{
 				m_apZombies[nRandZombie]->SetHealth(nNewHealth);
+				m_apVampires[nRandVampire]->LifeSteal();
+
 				m_apVampires[nRandVampire]->SetHealth(nVNewHealth);
 
 				if (nNewHealth <= 0)
@@ -85,27 +112,42 @@ bool Game::Update()
 					if (nVNewHealth <= 0)
 					{
 						--m_nVampiresLeft;
-					}
-		
+					}	
+					HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
+					const int saved_colors = GetConsoleTextAttribute(hConsole);
+
+
+					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					cout << "(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)";
+					SetConsoleTextAttribute(hConsole, saved_colors);
+					SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 					cout << "A " << m_apZombies[nRandZombie]->GetOccupation() << "attacks a " << m_apVampires[nRandVampire]->GetOccupation();
 					cout << "for " << nAttack << "damage, it has " << nVNewHealth << "Heatlth remaining" << endl;
-
+					SetConsoleTextAttribute(hConsole, saved_colors);
+					SetConsoleTextAttribute(hConsole, FOREGROUND_RED | FOREGROUND_INTENSITY);
 					cout << "A " << m_apVampires[nRandVampire]->GetOccupation() << "attacks a " << m_apZombies[nRandZombie]->GetOccupation();
 					cout << "for " << nVAttack << "damage, it has " << nNewHealth << "Heatlth remaining" << endl;
+					SetConsoleTextAttribute(hConsole, saved_colors);
+					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					cout << "(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)" << endl;
+					SetConsoleTextAttribute(hConsole, saved_colors);
 
 					cout << endl;
+					
 			}
 		}
 		else
 		{
-			//win
+			//----------------------------------------------------------
+			//Win condition for zombie and Vampire
+			//----------------------------------------------------------
 			if (nHealth > 0 && nVHealth > 0)
 			{
 				cout << "At the end of a hard fought battle they both still stand!" << endl;
 			}
 			else if (m_nZombiesLeft <= 0 || m_nVampiresLeft <= 0)
 			{
-				if (m_nZombiesLeft <= 0 && m_nVampiresLeft > 0)
+				if (m_nZombiesLeft > 0 && m_nVampiresLeft <= 0)
 				{
 					cout << "The Zombies stand victorious!" << endl;
 					return false;
@@ -118,4 +160,11 @@ bool Game::Update()
 			}
 		}
 	return true;
+}
+
+WORD GetConsoleTextAttribute(HANDLE hCon)
+{
+	CONSOLE_SCREEN_BUFFER_INFO con_info;
+	GetConsoleScreenBufferInfo(hCon, &con_info);
+	return con_info.wAttributes;
 }

@@ -21,6 +21,7 @@ void main()
 	bool gameRunning = true;
 	while (gameRunning)
 	{
+		GB.Reset;
 		cout << "Do you want to play TicTacToe?" << endl;
 		cout << "(Y) or (N)" << endl;
 		cin >> input;
@@ -28,19 +29,25 @@ void main()
 		{
 			while (input == 'Y' || input == 'y')
 			{
-				GB.PlayField();
+				GB.PlayField(WLX.ScoreX, WLO.ScoreO);
 				XT.PlayerXMark(GB.square);
-				GB.PlayField();
-				WLX.CheckWinX(GB.square);
+				GB.PlayField(WLX.ScoreX, WLO.ScoreO);
+				
+				if (WLX.CheckWinX(GB.square) == true)
+					break;
+	
 				OT.PlayerOMark(GB.square);
-				GB.PlayField();
-				WLO.CheckWinO(GB.square);
+				GB.PlayField(WLX.ScoreX, WLO.ScoreO);
+
+				if (WLO.CheckWinO(GB.square) == true)
+					break;
 			}
 		}
 		else if (input == 'N' || input == 'n')
 		{
 			cout << "fail" << endl;
 		}
+
 	}
 	system("Pause");
 }

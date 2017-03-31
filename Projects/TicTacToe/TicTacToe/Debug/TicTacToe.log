@@ -1,5 +1,2 @@
-﻿  WinLoseX.cpp
-  Source.cpp
-  Generating Code...
-c:\users\s171102\documents\visual studio 2015\projects\tictactoe\tictactoe\winlosex.cpp(73): warning C4715: 'WinLoseX::CheckWinX': not all control paths return a value
-  TicTacToe.vcxproj -> C:\Users\s171102\Documents\Visual Studio 2015\Projects\TicTacToe\Debug\TicTacToe.exe
+﻿  Source.cpp
+c:\users\s171102\documents\github\prog1styr\projects\tictactoe\tictactoe\source.cpp(24): error C3867: 'Board::Reset': non-standard syntax; use '&' to create a pointer to member

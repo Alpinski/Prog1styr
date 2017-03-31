@@ -4,7 +4,8 @@ class WinLoseO
 public:
 	WinLoseO();
 	~WinLoseO();
-	void CheckWinO(char square[3][3]);
+	bool CheckWinO(char square[3][3]);
+	int ScoreO = 0;
 protected:
 	bool Win = false;
 };
