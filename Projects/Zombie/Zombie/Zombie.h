@@ -5,6 +5,9 @@ public:
 	Zombie();
 	~Zombie();
 
+	//--------------------------------------------------
+	//Health, attack and occupation getters and setters.
+	//--------------------------------------------------
 	void SetHealth(int nHealth);
 	int GetHealth();
 

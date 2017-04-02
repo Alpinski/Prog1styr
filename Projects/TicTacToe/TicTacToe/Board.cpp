@@ -45,12 +45,11 @@ void Board::PlayField(int ScoreX, int ScoreO)
 
 void Board::Reset()
 {
-	for (int i = 0; i < 3; ++i)
+	for (int i = 0; i < 9; ++i)
 	{
-		for (int j = 0; j < 3; ++j)
-		{ 
-			square[i][j] = 
-		}
-		square[3][3] = { '1','2','3','4','5','6','7','8','9' };
+		int a = i / 3;
+		int b = i % 3;
+
+		square[a][b] = '0' + i + 1;
 	}
 }

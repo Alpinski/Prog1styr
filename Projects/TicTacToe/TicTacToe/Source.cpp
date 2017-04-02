@@ -4,6 +4,7 @@
 #include "PlayerO.h"
 #include "WinLoseX.h"
 #include "WinLoseO.h"
+#include "Board.h"
 
 
 using namespace std;
@@ -21,7 +22,7 @@ void main()
 	bool gameRunning = true;
 	while (gameRunning)
 	{
-		GB.Reset;
+		GB.Reset();
 		cout << "Do you want to play TicTacToe?" << endl;
 		cout << "(Y) or (N)" << endl;
 		cin >> input;

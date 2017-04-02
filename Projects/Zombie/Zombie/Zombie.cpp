@@ -7,9 +7,15 @@
 
 Zombie::Zombie()
 {
+	//--------------------------------------------
+	//Zombie random Health and Attack
+	//--------------------------------------------
 	m_nHealth = (rand() % 51) + 50;
 	m_nAttack = (rand() % 11) + 10;
 
+	//--------------------------------------------
+	//Randomizes occupations.
+	//--------------------------------------------
 	int nRandOcc = rand() % 10;
 	switch (nRandOcc)
 	{
@@ -31,22 +37,40 @@ Zombie::~Zombie()
 {
 }
 
+//--------------------------------------------
+//Sets Health.
+//--------------------------------------------
 void Zombie::SetHealth(int nHealth)
 {
 	m_nHealth = nHealth;
 }
+
+//--------------------------------------------
+//Gets Healt.
+//--------------------------------------------
 int Zombie::GetHealth()
 {
 	return m_nHealth;
 }
+
+//--------------------------------------------
+//Sets Attack.
+//--------------------------------------------
 void Zombie::SetAttack(int nAttack)
 {
 	m_nAttack = nAttack;
 }
+
+//--------------------------------------------
+//Gets Attack.
+//--------------------------------------------
 int Zombie::GetAttack()
 {
 	return m_nAttack;
 }
+//--------------------------------------------
+//Gets Occupation.
+//--------------------------------------------
 char* Zombie::GetOccupation()
 {
 	return m_szOccupation;

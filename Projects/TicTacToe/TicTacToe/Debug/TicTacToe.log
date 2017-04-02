@@ -1,2 +1,2 @@
 ﻿  Source.cpp
-c:\users\s171102\documents\github\prog1styr\projects\tictactoe\tictactoe\source.cpp(24): error C3867: 'Board::Reset': non-standard syntax; use '&' to create a pointer to member
+  TicTacToe.vcxproj -> C:\Users\s171102\Documents\GitHub\Prog1styr\Projects\TicTacToe\Debug\TicTacToe.exe

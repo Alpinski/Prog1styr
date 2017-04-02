@@ -14,10 +14,7 @@ void main()
 	//create Game
 	Game* pGame = new Game(10, 10);
 	
-	while (pGame->Update())
-	{
-
-	}
+	while (pGame->Update())	{	}
 
 	//delete game so no mem leaks
 	delete pGame;

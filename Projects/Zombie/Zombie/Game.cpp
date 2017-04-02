@@ -5,8 +5,15 @@
 
 using namespace std;
 
+//--------------------------------------------
+//Prototyping.
+//--------------------------------------------
 WORD GetConsoleTextAttribute(HANDLE hCon);
 
+//--------------------------------------------
+//Constructor for Zmbies and Vampires
+//The amount of Zombies and Vampires.
+//--------------------------------------------
 Game::Game(int nZombieCount, int nVampireCount)
 {
 	m_apZombies = new Zombie*[10];
@@ -30,6 +37,9 @@ Game::Game(int nZombieCount, int nVampireCount)
 	m_nVampiresLeft = nVampireCount;
 }
 
+//------------------------------------------------
+//The deconstructor, deletes Vampires and Zombies
+//------------------------------------------------
 Game::~Game()
 {
 	for (int i = 0; i < m_nZombieCount; ++i)
@@ -46,8 +56,12 @@ Game::~Game()
 	delete[] m_apVampires;
 }
 
+
 bool Game::Update()
 {
+	//--------------------------------------------
+	// BubbleSort for Vampires and Zombies.
+	//--------------------------------------------
 	if (m_nZombiesLeft > 1)
 	{
 		for (int i = 0; i < m_nZombiesLeft - 1; ++i)
@@ -113,11 +127,13 @@ bool Game::Update()
 					{
 						--m_nVampiresLeft;
 					}	
+
+					//--------------------------------------------
+					//Fight Sequence results printed.
+					//--------------------------------------------
 					HANDLE hConsole = GetStdHandle(STD_OUTPUT_HANDLE);
 					const int saved_colors = GetConsoleTextAttribute(hConsole);
-
-
-					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE| FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 					cout << "(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)";
 					SetConsoleTextAttribute(hConsole, saved_colors);
 					SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
@@ -131,7 +147,6 @@ bool Game::Update()
 					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
 					cout << "(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)" << endl;
 					SetConsoleTextAttribute(hConsole, saved_colors);
-
 					cout << endl;
 					
 			}
