@@ -12,10 +12,18 @@ public:
 	Vector2 operator*(const float rhs);
 	//Vector2 Multiply(const float rhs);
 	Vector2 operatorDiv(const float rhs);
-	Vector2 negOperator();
+	Vector2 posOperator();
+	Vector2 operator-();
 	Vector2 operator+=(const Vector2& rhs);
+	float Magnitude();
 
+	void Normalise();
+
+	float Dot(Vector2 rhs);
+
+	
 	float x;
 	float y;	
 };
+
 Vector2 operator*(float lhs, const Vector2 rhs);
