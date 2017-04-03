@@ -6,7 +6,6 @@
 #include "WinLoseO.h"
 #include "Board.h"
 
-
 using namespace std;
 
 void main()
@@ -20,6 +19,9 @@ void main()
 	char input;
 
 	bool gameRunning = true;
+	//------------------------------------------
+	// Game Loop that calls the functions.
+	//------------------------------------------
 	while (gameRunning)
 	{
 		GB.Reset();

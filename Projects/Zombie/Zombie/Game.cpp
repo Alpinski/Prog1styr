@@ -93,9 +93,6 @@ bool Game::Update()
 		}
 	}
 
-
-
-
 	//----------------------------------------------------------
 	//The fight sequence for the Vampires vs Zombies
 	//----------------------------------------------------------
@@ -137,6 +134,7 @@ bool Game::Update()
 					cout << "(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)";
 					SetConsoleTextAttribute(hConsole, saved_colors);
 					SetConsoleTextAttribute(hConsole, FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					cout << endl;
 					cout << "A " << m_apZombies[nRandZombie]->GetOccupation() << "attacks a " << m_apVampires[nRandVampire]->GetOccupation();
 					cout << "for " << nAttack << "damage, it has " << nVNewHealth << "Heatlth remaining" << endl;
 					SetConsoleTextAttribute(hConsole, saved_colors);
@@ -144,7 +142,7 @@ bool Game::Update()
 					cout << "A " << m_apVampires[nRandVampire]->GetOccupation() << "attacks a " << m_apZombies[nRandZombie]->GetOccupation();
 					cout << "for " << nVAttack << "damage, it has " << nNewHealth << "Heatlth remaining" << endl;
 					SetConsoleTextAttribute(hConsole, saved_colors);
-					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_GREEN | FOREGROUND_INTENSITY);
+					SetConsoleTextAttribute(hConsole, FOREGROUND_BLUE | FOREGROUND_INTENSITY);
 					cout << "(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)(|)" << endl;
 					SetConsoleTextAttribute(hConsole, saved_colors);
 					cout << endl;

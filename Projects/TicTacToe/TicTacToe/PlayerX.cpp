@@ -65,9 +65,7 @@ char PlayerX::PlayerXMark(char square[3][3])
 		}
 		else
 		{
-			cout << "Invalid Turn" << endl;
-			
-			//cin.get();		
+			cout << "Invalid Turn" << endl;		
 			input = true;
 		}
 		

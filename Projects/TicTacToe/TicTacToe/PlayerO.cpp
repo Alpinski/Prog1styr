@@ -67,9 +67,6 @@ char PlayerO::PlayerOMark(char square[3][3])
 		else
 		{
 			cout << "Invalid Turn" << endl;
-			//cin.clear();
-			//cin.ignore(100, '/n');
-			//cin.get();
 			input = true;
 		}
 		
