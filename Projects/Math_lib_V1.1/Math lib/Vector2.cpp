@@ -58,6 +58,43 @@ Vector2 operator*(float lhs, const Vector2 rhs)
 	return result;
 }
 
+float Vector2::Dot(Vector2 rhs)
+{
+	float result;
+	result = x * rhs.x + y * rhs.y;
+	return result;
+}
+
+float Vector2::Magnitude()
+{
+	float result;
+	result = sqrtf((x*x) + (y*y));
+	return result;
+}
+
+void Vector2::Normalise()
+{
+	float length = Magnitude();
+	if (length != 0)
+	{
+		x /= length;
+		y /= length;
+	}
+}
+
+Vector2 Vector2::Normalised(Vector2 data)
+{
+	Vector2 result;
+	float Mag = data.Magnitude();
+	if (!Mag == 0)
+	{
+		result.x = x / Mag;
+		result.y = y / Mag;
+		
+	}
+	return result;
+}
+
 //Vector2 Vector2::Multiply(float rhs)
 //{
 //	return Scalevf(rhs);
@@ -97,28 +134,4 @@ Vector2 Vector2::operator+= (const Vector2& rhs)
 	y += rhs.y;
 
 	return *this;
-}
-
-float Vector2::Magnitude()
-{
-	float result;
-	result = sqrt((x*x) + (y*y));
-	return result;
-}
-
-void Vector2::Normalise()
-{
-	float length = Magnitude();
-	if (length != 0)
-	{
-		x /= length;
-		y /= length;
-	}
-}
-
-float Vector2::Dot(Vector2 rhs)
-{
-	float result;
-	result = x * rhs.x + y * rhs.y;
-	return result;
 }

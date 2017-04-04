@@ -19,6 +19,8 @@ public:
 
 	void Normalise();
 
+	Vector2 Normalised(Vector2 data);
+
 	float Dot(Vector2 rhs);
 
 	

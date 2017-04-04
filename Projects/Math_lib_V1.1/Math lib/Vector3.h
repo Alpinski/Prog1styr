@@ -6,12 +6,33 @@ public:
 	Vector3(float newX, float newY, float newZ);
 	~Vector3();
 
-	Vector3 Translate(const Vector3& rhs);
-	Vector3 Add(const Vector3 & rhs);
-	Vector3 Subtract(const Vector3 & rhs);
-	Vector3 Scale(float scalar);
-	Vector3 Multiply(float scalar);
-	Vector3 Divide(float scalar);
+	Vector3 operator+(const Vector3& rhs);
+
+	//Vector3 Add(const Vector3 & rhs);
+
+	Vector3 operator-(const Vector3 & rhs);
+
+	Vector3 operator*(const float rhs);
+
+	Vector3 posOperator();
+
+	Vector3 operator-();
+
+	//Vector3 Multiply(float scalar);
+
+	Vector3 operator/(const float rhs);
+
+	Vector3 operator+=(const Vector3 & rhs);
+
+	float Magnitude();
+
+	void Normalise();
+
+	Vector3 Normalised(Vector3 data);
+
+	float Dot(Vector3 rhs);
+
+	Vector3 Cross(Vector3 rhs);
 
 	float x;
 	float y;
