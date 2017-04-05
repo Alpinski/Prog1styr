@@ -24,6 +24,10 @@ public:
 
 	Vector4 operator+=(const Vector4 & rhs);
 
+	float & operator[](const int rhs);
+
+	operator float*();
+
 	float Magnitude();
 
 	void Normalise();

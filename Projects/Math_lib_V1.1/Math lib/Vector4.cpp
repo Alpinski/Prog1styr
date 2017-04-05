@@ -89,6 +89,13 @@ Vector4 Vector4::Cross(Vector4 rhs)
 	return result;
 }
 
+float Vector4::Magnitude()
+{
+	float result;
+	result = sqrtf((x*x) + (y*y) + (z*z) + (w*w));
+	return result;
+}
+
 void Vector4::Normalise()
 {
 	float length = Magnitude();
@@ -149,9 +156,31 @@ Vector4 Vector4::operator+= (const Vector4& rhs)
 	return *this;
 }
 
-float Vector4::Magnitude()
+float& Vector4::operator[](const int rhs)
 {
-	float result;
-	result = sqrtf((x*x) + (y*y) + (z*z) + (w*w));
-	return result;
+	if (rhs == 0)
+	{
+		return x;
+	}
+	else if (rhs == 1)
+	{
+		return y;
+	}
+	else if (rhs == 2)
+	{
+		return z;
+	}
+	else if (rhs == 3)
+	{
+		return w;
+	}
+	else
+	{
+		return x;
+	}
+}
+
+Vector4::operator float*()
+{
+	return &x;
 }

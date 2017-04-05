@@ -1,4 +1,5 @@
 #include "Vector2.h"
+#include "Matrix2.h"
 #include <iostream>
 #include <math.h>
 
@@ -134,4 +135,25 @@ Vector2 Vector2::operator+= (const Vector2& rhs)
 	y += rhs.y;
 
 	return *this;
+}
+
+float& Vector2::operator[](const int rhs)
+{
+	if (rhs == 0)
+	{
+		return x;
+	}
+	else if (rhs == 1)
+	{
+		return y;
+	}
+	else
+	{
+		return x;
+	}
+}
+
+Vector2::operator float*()
+{
+	return &x;
 }

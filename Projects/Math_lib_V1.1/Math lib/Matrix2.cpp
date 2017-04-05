@@ -1,5 +1,5 @@
 #include "Matrix2.h"
-
+#include <math.h>
 
 Matrix2::Matrix2()
 {
@@ -40,4 +40,22 @@ Matrix2 Matrix2::operator*(const Matrix2& rhs)
 	result.m[1][1] = m[1][0] * rhs.m[0][1] + m[1][1] * rhs.m[1][1];
 
 	return result;
+}
+
+Matrix2 Matrix2::setRotation(const float a)
+{
+	m[0][0] = cosf(a);
+	m[0][1] = sinf(a);
+	m[1][0] = -sinf(a);
+	m[1][1] = cosf(a);
+}
+
+Vector2& Matrix2::operator[](const int rhs)
+{
+	return*(Vector2*)m[rhs];
+}
+
+Matrix2::operator float*()
+{
+	return &m[0][0];
 }

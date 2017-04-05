@@ -15,6 +15,8 @@ public:
 	Vector2 posOperator();
 	Vector2 operator-();
 	Vector2 operator+=(const Vector2& rhs);
+	float & operator[](const int rhs);
+	operator float*();
 	float Magnitude();
 
 	void Normalise();
