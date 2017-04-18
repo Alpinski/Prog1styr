@@ -36,9 +36,9 @@ Matrix3::~Matrix3()
 Vector3 Matrix3::operator*(const Vector3& rhs)
 {
 	Vector3 result;
-	result.x = m[0][0] * rhs.x + m[0][1] * rhs.y + m[0][2] * rhs.z;
-	result.y = m[1][0] * rhs.x + m[1][1] * rhs.y + m[1][2] * rhs.z;
-	result.z = m[2][0] * rhs.x + m[2][1] * rhs.y + m[2][2] * rhs.z;
+	result.x = m[0][0] * rhs.x + m[1][0] * rhs.y + m[2][0] * rhs.z;
+	result.y = m[0][1] * rhs.x + m[1][1] * rhs.y + m[2][1] * rhs.z;
+	result.z = m[2][0] * rhs.x + m[1][2] * rhs.y + m[2][2] * rhs.z;
 
 	return result;
 }
