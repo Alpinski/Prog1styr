@@ -7,33 +7,19 @@ public:
 	~Vector4();
 
 	Vector4 operator+(const Vector4 & rhs);
-
 	//Vector4 Add(const Vector4 & rhs);
-
 	Vector4 operator-(const Vector4 & rhs);
-
 	Vector4 operator*(float rhs);
-
 	Vector4 posOperator();
-
 	Vector4 operator-();
-
 	//Vector4 Multiply(float rhs);
-
 	Vector4 operator/(const float rhs);
-
 	Vector4 operator+=(const Vector4 & rhs);
-
 	float & operator[](const int rhs);
-
 	operator float*();
-
 	float Magnitude();
-
 	void Normalise();
-
 	float Dot(Vector4 rhs);
-
 	Vector4 Cross(Vector4 rhs);
 
 	float x;
@@ -42,3 +28,4 @@ public:
 	float w;
 };
 
+Vector4 operator*(float lhs, const Vector4 rhs);

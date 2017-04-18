@@ -5,18 +5,18 @@ class Matrix3
 {
 public:
 	Matrix3();
-	Matrix3(float xx, float xy, float xz, float yy, float yx, float yz, float zz, float zx, float zy);
+	Matrix3(float xx, float xy, float xz, float yx, float yy, float yz, float zx, float zy, float zz);
 	~Matrix3();
 
 	Vector3 operator*(const Vector3 & rhs);
 
 	Matrix3 operator*(const Matrix3 & rhs);
 
-	Matrix3 setRotationX(const float a);
+	void setRotationX(const float a);
 
-	Matrix3 setRotationY(const float a);
+	void setRotationY(const float a);
 
-	Matrix3 setRotationZ(const float z);
+	void setRotationZ(const float z);
 
 	Vector3 & operator[](const int rhs);
 

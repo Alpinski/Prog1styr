@@ -1,4 +1,10 @@
 #include "unittest.h"
+#include "Vector2.h"
+#include "Vector3.h"
+#include "Vector4.h"
+#include "Matrix2.h"
+#include "Matrix3.h"
+#include "Matrix4.h"
 #include <iostream>
 #include <iomanip>
 
@@ -183,11 +189,11 @@ bool runUnitTests() {
 
 	// vector dot product
 	v2a = Vector2(13.5f, -48.23f); v2b = Vector2(5, 3.99f);
-	float dot2 = v2a.dot(v2b);
+	float dot2 = v2a.Dot(v2b);
 	v3a = Vector3(13.5f, -48.23f, 862); v3b = Vector3(5, 3.99f, -12);
-	float dot3 = v3a.dot(v3b);
+	float dot3 = v3a.Dot(v3b);
 	v4a = Vector4(13.5f, -48.23f, 862, 0); v4b = Vector4(5, 3.99f, -12, 1);
-	float dot4 = v4a.dot(v4b);
+	float dot4 = v4a.Dot(v4b);
 
 	TEST("Vector2 dot", dot2, -124.937698364f);
 	TEST("Vector3 dot", dot3, -10468.9375f);
@@ -195,20 +201,20 @@ bool runUnitTests() {
 
 	// vector cross product
 	v3a = Vector3(13.5f, -48.23f, 862); v3b = Vector3(5, 3.99f, -12);
-	v3c = v3a.cross(v3b);
+	v3c = v3a.Cross(v3b);
 	v4a = Vector4(13.5f, -48.23f, 862, 0); v4b = Vector4(5, 3.99f, -12, 1);
-	v4c = v4a.cross(v4b);
+	v4c = v4a.Cross(v4b);
 
 	TEST("Vector3 cross", v3c, Vector3(-2860.62011719f, 4472.00000000f, 295.01498413f));
 	TEST("Vector4 cross", v4c, Vector4(-2860.62011719f, 4472.00000000f, 295.01498413f, 0));
 
 	// vector magnitude
 	v2a = Vector2(13.5f, -48.23f);
-	float mag2 = v2a.magnitude();
+	float mag2 = v2a.Magnitude();
 	v3a = Vector3(13.5f, -48.23f, 862);
-	float mag3 = v3a.magnitude();
+	float mag3 = v3a.Magnitude();
 	v4a = Vector4(13.5f, -48.23f, 862, 0);
-	float mag4 = v4a.magnitude();
+	float mag4 = v4a.Magnitude();
 
 	TEST("Vector2 magnitude", mag2, 50.0837593079f);
 	TEST("Vector3 magnitude", mag3, 863.453735352f);
@@ -216,11 +222,11 @@ bool runUnitTests() {
 
 	// vector normalise
 	v2a = Vector2(-13.5f, -48.23f);
-	v2a.normalise();
+	v2a.Normalise();
 	v3a = Vector3(13.5f, -48.23f, 862);
-	v3a.normalise();
+	v3a.Normalise();
 	v4a = Vector4(243, -48.23f, 862, 0);
-	v4a.normalise();
+	v4a.Normalise();
 
 	TEST("Vector2 normalise", v2a, Vector2(-0.269548f,-0.962987f));
 	TEST("Vector3 normalise", v3a, Vector3(0.0156349f,-0.0558571f,0.998316f));
@@ -230,21 +236,21 @@ bool runUnitTests() {
 	Matrix2 m2;
 	Matrix3 m3a, m3b, m3c, m3d;
 	Matrix4 m4a, m4b, m4c, m4d;
-	m2.setRotate(4.576f);
-	m3a.setRotateX(3.98f);
-	m4a.setRotateX(4.5f);
-	m3b.setRotateY(1.76f);
-	m4b.setRotateY(-2.6f);
-	m3c.setRotateZ(9.62f);
-	m4c.setRotateZ(0.72f);
+	m2.setRotation(4.576f);
+	m3a.setRotationX(3.98f);
+	m4a.setRotationX(4.5f);
+	m3b.setRotationY(1.76f);
+	m4b.setRotationY(-2.6f);
+	m3c.setRotationZ(9.62f);
+	m4c.setRotationZ(0.72f);
 
 	TEST("Matrix2 set rotate", m2, Matrix2(-0.135966f,-0.990713f,0.990713f,-0.135966f));
-	TEST("Matrix3 set rotate", m3a, Matrix3(1,0,0,0,-0.668648f,-0.743579f,0,0.743579f,-0.668648f));
-	TEST("Matrix3 set rotate", m3b, Matrix3(-0.188077f,0,-0.982154f,0,1,0,0.982154f,0,-0.188077f));
-	TEST("Matrix3 set rotate", m3c, Matrix3(-0.981005f,-0.193984f,0,0.193984f,-0.981005f,0,0,0,1));
-	TEST("Matrix4 set rotate", m4a, Matrix4(1,0,0,0,0,-0.210796f,-0.97753f,0,0,0.97753f,-0.210796f,0,0,0,0,1));
-	TEST("Matrix4 set rotate", m4b, Matrix4(-0.856889f,0,0.515501f,0,0,1,0,0,-0.515501f,0,-0.856889f,0,0,0,0,1));
-	TEST("Matrix4 set rotate", m4c, Matrix4(0.751806f,0.659385f,0,0,-0.659385f,0.751806f,0,0,0,0,1,0,0,0,0,1));
+	TEST("Matrix3 set rotate X", m3a, Matrix3(1,0,0,0,-0.668648f,-0.743579f,0,0.743579f,-0.668648f));
+	TEST("Matrix3 set rotate Y", m3b, Matrix3(-0.188077f,0,-0.982154f,0,1,0,0.982154f,0,-0.188077f));
+	TEST("Matrix3 set rotate Z", m3c, Matrix3(-0.981005f,-0.193984f,0,0.193984f,-0.981005f,0,0,0,1));
+	TEST("Matrix4 set rotate X", m4a, Matrix4(1,0,0,0,0,-0.210796f,-0.97753f,0,0,0.97753f,-0.210796f,0,0,0,0,1));
+	TEST("Matrix4 set rotate Y", m4b, Matrix4(-0.856889f,0,0.515501f,0,0,1,0,0,-0.515501f,0,-0.856889f,0,0,0,0,1));
+	TEST("Matrix4 set rotate Z", m4c, Matrix4(0.751806f,0.659385f,0,0,-0.659385f,0.751806f,0,0,0,0,1,0,0,0,0,1));
 
 	// vector transform
 	v2a = Vector2(13.5f, -48.23f);
@@ -264,7 +270,7 @@ bool runUnitTests() {
 
 	// matrix multiply
 	Matrix2 m2b, m2c;
-	m2b.setRotate(-2.145f);
+	m2b.setRotation(-2.145f);
 	m2c = m2 * m2b;
 	m3d = m3a * m3c;
 	m4d = m4c * m4b;
@@ -278,14 +284,14 @@ bool runUnitTests() {
 				  0, 1, 0,
 				  0, 0, 1);
 	m3b[2] = Vector3(55, 44, 1);
-	m3c.setRotateZ(2.2f);
+	m3c.setRotationZ(2.2f);
 	m3c[2] = Vector3(55, 44, 1);
 	m4b = Matrix4(1, 0, 0, 0,
 				  0, 1, 0, 0,
 				  0, 0, 1, 0,
 				  0, 0, 0, 1);
 	m4b[3] = Vector4(55, 44, 99, 1);
-	m4c.setRotateZ(2.2f);
+	m4c.setRotationZ(2.2f);
 	m4c[3] = Vector4(55, 44, 99, 1);
 
 	v3a = Vector3(13.5f, -48.23f, 1);
@@ -305,14 +311,14 @@ bool runUnitTests() {
 				  0, 1, 0,
 				  0, 0, 1);
 	m3b[2] = Vector3(55, 44, 1);
-	m3c.setRotateZ(2.2f);
+	m3c.setRotationZ(2.2f);
 	m3c[2] = Vector3(55, 44, 1);
 	m4b = Matrix4(1, 0, 0, 0,
 				  0, 1, 0, 0,
 				  0, 0, 1, 0,
 				  0, 0, 0, 1);
 	m4b[3] = Vector4(55, 44, 99, 1);
-	m4c.setRotateZ(2.2f);
+	m4c.setRotationZ(2.2f);
 	m4c[3] = Vector4(55, 44, 99, 1);
 
 	v3a = Vector3(13.5f, -48.23f, 0);

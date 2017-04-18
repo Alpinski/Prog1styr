@@ -45,7 +45,7 @@ Vector4 Vector4::operator-(const Vector4& rhs)
 	result.x = x - rhs.x;
 	result.y = y - rhs.y;
 	result.z = z - rhs.z;
-	result.w = w + rhs.w;
+	result.w = w - rhs.w;
 
 	return result;
 }
@@ -56,7 +56,7 @@ Vector4 Vector4::operator*(const float rhs)
 	result.x = x * rhs;
 	result.y = y * rhs;
 	result.z = z * rhs;
-	result.w = w + rhs;
+	result.w = w * rhs;
 
 	return result;
 }
