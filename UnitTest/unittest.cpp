@@ -263,8 +263,8 @@ bool runUnitTests() {
 	v4c = m4c * v4a;
 
 	TEST("Vector2 matrix transform", v2c, Vector2(-49.6176567078f, -6.81697654724f));
-	TEST("Vector3 matrix transform", v3b, Vector3(844.077941895f, -48.2299995422f, -175.38130188f));
-	TEST("Vector3 matrix transform", v3c, Vector3(-22.5994224548f, 44.6950683594f, 862));
+	TEST("Vector3 matrix transform A", v3b, Vector3(844.077941895f, -48.2299995422f, -175.38130188f));
+	TEST("Vector3 matrix transform B", v3c, Vector3(-22.5994224548f, 44.6950683594f, 862));
 	TEST("Vector4 matrix transform", v4b, Vector4(-455.930236816f, -48.2299995422f, -731.678771973f, 0));
 	TEST("Vector4 matrix transform", v4c, Vector4(41.951499939f, -27.3578968048f, 862, 0));
 
