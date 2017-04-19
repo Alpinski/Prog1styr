@@ -25,6 +25,8 @@ public:
 
 	float Dot(Vector2 rhs);
 
+	double dot(Vector2 & rhs);
+
 	
 	float x;
 	float y;	

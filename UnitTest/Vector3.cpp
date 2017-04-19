@@ -72,6 +72,7 @@ float Vector3::Dot(Vector3 rhs)
 	return result;
 }
 
+
 Vector3 Vector3::Cross(Vector3 rhs)
 {
 	Vector3 result;
