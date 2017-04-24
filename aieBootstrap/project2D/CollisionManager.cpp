@@ -44,7 +44,7 @@ bool CollisionManager::TestCollision(Entity* pObject)
 		if (pObject == m_CollisionList[i])
 			continue;
 
-		//Calculate AABB of out two objects
+		//Calculate AABB of our two objects
 		Collider collider1 = pObject->GetCollider();
 		collider1.m_TL = collider1.m_TL + pObject->GetPosition();
 		collider1.m_BR = collider1.m_BR + pObject->GetPosition();

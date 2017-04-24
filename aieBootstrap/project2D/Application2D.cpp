@@ -17,7 +17,7 @@ bool Application2D::startup()
 {
 	m_2dRenderer = new Renderer2D();
 
-	m_shipTexture = new Texture("./textures/ship.png");
+
 
 	m_font = new Font("./font/consolas.ttf", 32);
 
@@ -34,7 +34,6 @@ void Application2D::shutdown()
 {
 	delete m_audio;
 	delete m_font;
-	delete m_shipTexture;
 	delete m_2dRenderer;
 }
 
@@ -80,7 +79,6 @@ void Application2D::draw()
 
 	// demonstrate spinning sprite
 	m_2dRenderer->setUVRect(0,0,1,1);
-	m_2dRenderer->drawSprite(m_shipTexture, 600, 400, 0, 0, m_timer, 1);
 
 	// draw a thin line
 	m_2dRenderer->drawLine(300, 300, 500, 400, 2, 1);

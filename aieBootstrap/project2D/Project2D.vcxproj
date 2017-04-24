@@ -90,30 +90,25 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\..\UnitTest\Matrix2.cpp" />
-    <ClCompile Include="..\..\UnitTest\matrix3.cpp" />
     <ClCompile Include="..\..\UnitTest\Matrix4.cpp" />
     <ClCompile Include="..\..\UnitTest\Vector2.cpp" />
     <ClCompile Include="..\..\UnitTest\Vector3.cpp" />
     <ClCompile Include="..\..\UnitTest\Vector4.cpp" />
-    <ClCompile Include="AABB.cpp" />
     <ClCompile Include="Application2D.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Entity.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Matrix3.cpp" />
     <ClCompile Include="Player.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\UnitTest\Matrix2.h" />
-    <ClInclude Include="..\..\UnitTest\matrix3.h" />
     <ClInclude Include="..\..\UnitTest\Matrix4.h" />
-    <ClInclude Include="..\..\UnitTest\Vector2.h" />
-    <ClInclude Include="..\..\UnitTest\Vector3.h" />
-    <ClInclude Include="..\..\UnitTest\Vector4.h" />
-    <ClInclude Include="AABB.h" />
     <ClInclude Include="Application2D.h" />
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Matrix3.h" />
     <ClInclude Include="Player.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
