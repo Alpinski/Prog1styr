@@ -19,6 +19,6 @@ private:
 	CollisionManager();
 	~CollisionManager();
 
-	vector<Entity*> m_CollisionList;
+	std::vector<Entity*> m_CollisionList;
 };
 

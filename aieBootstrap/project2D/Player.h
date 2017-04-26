@@ -13,6 +13,7 @@
 #include "Font.h"
 #include "Input.h"
 #include "Renderer2D.h"
+//#include "Physics.h"
 
 
 class Player : public Entity
@@ -23,7 +24,7 @@ public:
 
 	aie::Texture*		m_shipTexture;
 
-	void Update(Physics * pPhysics, float deltaTime);
+	//void Update(Physics * pPhysics, float deltaTime);
 
 	void Draw(aie::Renderer2D * m_2dRenderer);
 

@@ -24,12 +24,6 @@ Collider& Entity::GetCollider()
 	return m_Collider;
 }
 
-
-Vector2 Entity::GetPosition()
-{
-	return pos;
-}
-
 void Entity::Update()
 {
 }

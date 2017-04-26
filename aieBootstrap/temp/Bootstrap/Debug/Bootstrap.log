@@ -11,4 +11,8 @@
   imgui.cpp
   Generating Code...
   gl_core_4_4.c
-c:\users\s171102\documents\github\prog1styr\aiebootstrap\bootstrap\gl_core_4_4.c : fatal error C1041: cannot open program database 'C:\Users\s171102\Documents\GitHub\Prog1styr\aieBootstrap\temp\Bootstrap\Debug\Bootstrap.idb'; if multiple CL.EXE write to the same .PDB file, please use /FS
+libsndfile-1.lib(libsndfile-1.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
+libsndfile-1.lib(libsndfile-1.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+OpenAL32.lib(OpenAL32.dll) : warning LNK4006: __NULL_IMPORT_DESCRIPTOR already defined in opengl32.lib(OPENGL32.dll); second definition ignored
+OpenAL32.lib(OpenAL32.dll) : warning LNK4221: This object file does not define any previously undefined public symbols, so it will not be used by any link operation that consumes this library
+  Bootstrap.vcxproj -> C:\Users\s171102\Documents\GitHub\Prog1styr\aieBootstrap\temp\Bootstrap\Debug\Bootstrap.lib

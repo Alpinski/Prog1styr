@@ -33,12 +33,6 @@ Vector4 Vector4::operator+(const Vector4& rhs)
 	return result;
 }
 
-//Vector3 Vector3::Add(const Vector3& rhs)
-//{
-//	return Translate(rhs);
-//	
-//}
-
 Vector4 Vector4::operator-(const Vector4& rhs)
 {
 	Vector4 result;
@@ -129,12 +123,6 @@ Vector4 Vector4::operator-()
 
 	return result;
 }
-
-//Vector3 Vector3::Multiply(float scalar)
-//{
-//	return Scale(scalar);
-//
-//}
 
 Vector4 Vector4::operator/(const float rhs)
 {
