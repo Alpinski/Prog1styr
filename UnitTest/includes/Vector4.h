@@ -1,24 +1,40 @@
 #pragma once
+
+#ifdef STATIC_LIB//STATIC
+	#define MATH_DLL
+#else//DYNAMIC
+	#ifdef DLL_EXPORT
+		#define MATH_DLL __declspec(dllexport)
+	#else
+		#define MATH_DLL __declspec(dllimport)
+	#endif
+#endif
+
+
 class Vector4
 {
 public:
-	Vector4();
-	Vector4(float newX, float newY, float newZ, float newW);
-	~Vector4();
+	MATH_DLL	Vector4();
+	MATH_DLL	Vector4(float newX, float newY, float newZ, float newW);
+	MATH_DLL	~Vector4();
 
-	Vector4 operator+(const Vector4 & rhs);
-	Vector4 operator-(const Vector4 & rhs);
-	Vector4 operator*(float rhs);
-	Vector4 posOperator();
-	Vector4 operator-();
-	Vector4 operator/(const float rhs);
-	Vector4 operator+=(const Vector4 & rhs);
-	float & operator[](const int rhs);
-	operator float*();
-	float Magnitude();
-	void Normalise();
-	float Dot(Vector4 rhs);
-	Vector4 Cross(Vector4 rhs);
+	MATH_DLL	Vector4 operator+(const Vector4 & rhs);
+	MATH_DLL	Vector4 operator-(const Vector4 & rhs);
+	MATH_DLL	Vector4 operator*(float rhs);
+	MATH_DLL	Vector4 posOperator();
+	MATH_DLL	Vector4 operator-();
+	MATH_DLL	Vector4 operator/(const float rhs);
+	MATH_DLL	Vector4 operator+=(const Vector4 & rhs);
+	MATH_DLL	Vector4 Cross(Vector4 rhs);
+	MATH_DLL	float & operator[](const int rhs);
+	MATH_DLL	operator float*();
+	MATH_DLL	float Magnitude();
+	MATH_DLL	void Normalise();
+	MATH_DLL	float Dot(Vector4 rhs);
+	
+	
+	
+
 
 	float x;
 	float y;
@@ -26,4 +42,4 @@ public:
 	float w;
 };
 
-Vector4 operator*(float lhs, const Vector4 rhs);
+	MATH_DLL	Vector4 operator*(float lhs, const Vector4 rhs);
