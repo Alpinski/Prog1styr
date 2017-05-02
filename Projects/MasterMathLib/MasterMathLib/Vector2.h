@@ -27,9 +27,15 @@ public:
 	MATH_DLL	Vector2 Normalised(Vector2 data);
 	MATH_DLL	float & operator[](const int rhs);
 	MATH_DLL	operator float*();
+	MATH_DLL	bool operator>=(const Vector2 & rhs);
 	MATH_DLL	float Magnitude();
 	MATH_DLL	void Normalise();
 	MATH_DLL	float Dot(Vector2 rhs);
+	MATH_DLL	bool operator> (const Vector2& rhs);
+	MATH_DLL	bool operator< (const Vector2& rhs);
+	MATH_DLL	bool operator==(const Vector2 & rhs);
+	MATH_DLL	bool operator!=(const Vector2 & rhs);
+	MATH_DLL	bool operator<=(const Vector2 & rhs);
 	
 	float x;
 	float y;

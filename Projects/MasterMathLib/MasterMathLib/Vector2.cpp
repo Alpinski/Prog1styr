@@ -66,6 +66,36 @@ float Vector2::Dot(Vector2 rhs)
 	return result;
 }
 
+bool Vector2::operator> (const Vector2& rhs)
+{
+	return(x > rhs.x && y > rhs.y);
+}
+
+bool Vector2::operator< (const Vector2& rhs)
+{
+	return(x < rhs.x && y < rhs.y);
+}
+
+bool Vector2::operator==(const Vector2& rhs)
+{
+	return(x == rhs.x && y == rhs.y);
+}
+
+bool Vector2::operator!=(const Vector2& rhs)
+{
+	return(x != rhs.x && y != rhs.y);
+}
+
+bool Vector2::operator<=(const Vector2& rhs)
+{
+	return(x <= rhs.x && y <= rhs.y);
+}
+
+bool Vector2::operator>=(const Vector2& rhs)
+{
+	return(x >= rhs.x && y >= rhs.y);
+}
+
 float Vector2::Magnitude()
 {
 	float result;

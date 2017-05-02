@@ -1,5 +1,4 @@
-#include "Matrix2.h"
-#include <math.h>
+﻿#include "Matrix2.h"
 
 Matrix2::Matrix2()
 {
@@ -50,6 +49,19 @@ void Matrix2::setRotation(const float a)
 	m[1][1] = cosf(a);
 }
 
+void Matrix2::setScale(const float x, const float y)
+{
+	m[0][0] = x;
+	m[1][0] = 0;
+	m[0][1] = 0;
+	m[1][1] = y;
+}
+
+void Matrix2::setRotationDeg(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotation(rad);
+}
 
 Vector2& Matrix2::operator[](const int rhs)
 {
@@ -59,4 +71,18 @@ Vector2& Matrix2::operator[](const int rhs)
 Matrix2::operator float*()
 {
 	return &m[0][0];
+}
+
+float Matrix2::convertRadToDeg(float Radian)
+{
+	float Degree;
+	Degree = Radian * (180.0f / M_PI);
+	return Degree;
+}
+
+float Matrix2::convertDegToRad(float Degree)
+{
+	float Radian;
+	Radian = Degree * (M_PI / 180.0f);
+	return Radian;
 }

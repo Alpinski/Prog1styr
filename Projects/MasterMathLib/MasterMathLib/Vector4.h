@@ -31,6 +31,18 @@ public:
 	MATH_DLL	float Magnitude();
 	MATH_DLL	void Normalise();
 	MATH_DLL	float Dot(Vector4 rhs);
+	MATH_DLL	float Distance(Vector4 rhs);
+	MATH_DLL	bool operator> (const Vector4& rhs);
+	MATH_DLL	bool operator< (const Vector4& rhs);
+
+	bool operator==(const Vector4 & rhs);
+
+	bool operator!=(const Vector4 & rhs);
+
+	bool operator<=(const Vector4 & rhs);
+
+	bool operator>=(const Vector4 & rhs);
+
 
 	MATH_DLL	Vector4 xxxx();
 	MATH_DLL	Vector4 xxxy();

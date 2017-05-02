@@ -1,5 +1,5 @@
 #include "Matrix4.h"
-#include <math.h>
+#include <cmath>
 
 Matrix4::Matrix4()
 {
@@ -185,6 +185,24 @@ void Matrix4::setScale(const float x, const float y, const float z)
 	m[3][3] = 1;
 }
 
+void Matrix4::setRotationDegX(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationX(rad);
+}
+
+void Matrix4::setRotationDegY(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationY(rad);
+}
+
+void Matrix4::setRotationDegZ(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationZ(rad);
+}
+
 Vector4& Matrix4::operator[](const int rhs)
 {
 	return*(Vector4*)m[rhs];
@@ -193,4 +211,18 @@ Vector4& Matrix4::operator[](const int rhs)
 Matrix4::operator float*()
 {
 	return &m[0][0];
+}
+
+float Matrix4::convertRadToDeg(float Radian)
+{
+	float Degree;
+	Degree = Radian * (180.0f / M_PI);
+	return Degree;
+}
+
+float Matrix4::convertDegToRad(float Degree)
+{
+	float Radian;
+	Radian = Degree * (M_PI / 180.0f);
+	return Radian;
 }

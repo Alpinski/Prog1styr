@@ -157,6 +157,39 @@ Vector4 Vector4::operator+= (const Vector4& rhs)
 	return *this;
 }
 
+
+bool Vector4:: operator> (const Vector4& rhs)
+{
+	return(x > rhs.x && y > rhs.y && z > rhs.z && w > rhs.w);
+}
+
+bool Vector4:: operator< (const Vector4& rhs)
+{
+	return(x < rhs.x && y < rhs.y && z < rhs.z && w < rhs.w);
+}
+
+bool Vector4::operator==(const Vector4& rhs)
+{
+	return(x == rhs.x && y == rhs.y && z == rhs.z && w == rhs.w);
+}
+
+bool Vector4::operator!=(const Vector4& rhs)
+{
+	return(x != rhs.x && y != rhs.y && z != rhs.z && w != rhs.w);
+}
+
+bool Vector4::operator<=(const Vector4& rhs)
+{
+	return(x <= rhs.x && y <= rhs.y && z <= rhs.z && w <= rhs.w);
+}
+
+bool Vector4::operator>=(const Vector4& rhs)
+{
+	return(x >= rhs.x && y >= rhs.y && z >= rhs.z && w >= rhs.w);
+}
+
+
+
 float& Vector4::operator[](const int rhs)
 {
 	if (rhs == 0)
@@ -184,6 +217,20 @@ float& Vector4::operator[](const int rhs)
 Vector4::operator float*()
 {
 	return &x;
+}
+
+float Vector4::Distance(Vector4 rhs)
+{
+	float dist;
+	Vector4 result;
+	result.x = x - rhs.x;
+	result.y = y - rhs.y;
+	result.z = z - rhs.z;
+	result.w = w - rhs.w;
+
+	dist = result.Magnitude();
+
+	return dist;
 }
 
 Vector4 Vector4::xxxx()

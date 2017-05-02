@@ -1,6 +1,5 @@
-#include "matrix3.h"
+﻿#include "matrix3.h"
 #include <math.h>
-
 
 
 Matrix3::Matrix3()
@@ -100,6 +99,23 @@ void Matrix3::setRotationZ(const float a)
 	m[2][2] = 1;
 }
 
+void Matrix3::setRotationDegX(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationX(rad);
+}
+
+void Matrix3::setRotationDegY(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationY(rad);
+}
+
+void Matrix3::setRotationDegZ(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationZ(rad);
+}
 
 void Matrix3::setPosition(const Vector2& rhs)
 {
@@ -135,4 +151,18 @@ Vector3& Matrix3::operator[](const int rhs)
 Matrix3::operator float*()
 {
 	return &m[0][0];
+}
+
+float Matrix3::convertRadToDeg(float Radian)
+{
+	float Degree;
+	Degree = Radian * (180.0f / M_PI);
+	return Degree;
+}
+
+float Matrix3::convertDegToRad(float Degree)
+{
+	float Radian;
+	Radian = Degree * (M_PI / 180.0f);
+	return Radian;
 }

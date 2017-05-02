@@ -73,6 +73,37 @@ float Vector3::Dot(Vector3 rhs)
 }
 
 
+bool Vector3::operator> (const Vector3& rhs)
+{
+	return(x > rhs.x && y > rhs.y && z > rhs.z);
+}
+
+bool Vector3::operator< (const Vector3& rhs)
+{
+	return(x < rhs.x && y < rhs.y && z < rhs.z);
+}
+
+bool Vector3::operator==(const Vector3& rhs)
+{
+	return(x == rhs.x && y == rhs.y && z == rhs.z);
+}
+
+bool Vector3::operator!=(const Vector3& rhs)
+{
+	return(x != rhs.x && y != rhs.y && z != rhs.z);
+}
+
+bool Vector3::operator<=(const Vector3& rhs)
+{
+	return(x <= rhs.x && y <= rhs.y && z <= rhs.z);
+}
+
+bool Vector3::operator>=(const Vector3& rhs)
+{
+	return(x >= rhs.x && y >= rhs.y && z >= rhs.z);
+}
+
+
 Vector3 Vector3::Cross(Vector3 rhs)
 {
 	Vector3 result;
