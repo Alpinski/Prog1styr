@@ -36,6 +36,11 @@ public:
 	MATH_DLL	bool operator==(const Vector2 & rhs);
 	MATH_DLL	bool operator!=(const Vector2 & rhs);
 	MATH_DLL	bool operator<=(const Vector2 & rhs);
+
+	MATH_DLL	Vector2 xx();
+	MATH_DLL	Vector2 xy();
+	MATH_DLL	Vector2 yx();
+	MATH_DLL	Vector2 yy();
 	
 	float x;
 	float y;

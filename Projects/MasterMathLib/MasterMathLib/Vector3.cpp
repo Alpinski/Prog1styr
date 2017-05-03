@@ -120,6 +120,13 @@ float Vector3::Magnitude()
 	return result;
 }
 
+float Vector3::sqrMagnitude()
+{
+	float result;
+	result = (x*x) + (y*y) + (z*z);
+	return result;
+}
+
 void Vector3::Normalise()
 {
 	float length = Magnitude();
@@ -213,4 +220,222 @@ float& Vector3::operator[](const int rhs)
 Vector3::operator float*()
 {
 	return &x;
+}
+
+//Swizzles the elements of the vector, assigning differing values depending on the variables in the function name
+Vector3 Vector3::xxx()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = x;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::xxy()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = x;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::xxz()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = x;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::xyx()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = y;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::xyy()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = y;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::xyz()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = y;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::xzx()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = z;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::xzy()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = z;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::xzz()
+{
+	Vector3 result;
+	result.x = x;
+	result.y = z;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::yxx()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = x;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::yxy()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = x;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::yxz()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = x;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::yyx()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = y;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::yyy()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = y;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::yyz()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = y;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::yzx()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = z;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::yzy()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = z;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::yzz()
+{
+	Vector3 result;
+	result.x = y;
+	result.y = z;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::zxx()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = x;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::zxy()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = x;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::zxz()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = x;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::zyx()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = y;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::zyy()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = y;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::zyz()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = y;
+	result.z = z;
+	return result;
+}
+Vector3 Vector3::zzx()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = z;
+	result.z = x;
+	return result;
+}
+Vector3 Vector3::zzy()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = z;
+	result.z = y;
+	return result;
+}
+Vector3 Vector3::zzz()
+{
+	Vector3 result;
+	result.x = z;
+	result.y = z;
+	result.z = z;
+	return result;
 }

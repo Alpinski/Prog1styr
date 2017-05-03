@@ -181,3 +181,35 @@ Vector2::operator float*()
 {
 	return &x;
 }
+
+Vector2 Vector2::xx()
+{
+	Vector2 result;
+	result.x = x;
+	result.y = x;
+	return result;
+}
+
+Vector2 Vector2::xy()
+{
+	Vector2 result;
+	result.x = x;
+	result.y = y;
+	return result;
+}
+
+Vector2 Vector2::yx()
+{
+	Vector2 result;
+	result.x = y;
+	result.y = x;
+	return result;
+}
+
+Vector2 Vector2::yy()
+{
+	Vector2 result;
+	result.x = y;
+	result.y = y;
+	return result;
+}
