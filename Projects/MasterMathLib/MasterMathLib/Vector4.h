@@ -39,7 +39,13 @@ public:
 	MATH_DLL	bool operator<=(const Vector4 & rhs);
 	MATH_DLL	bool operator>=(const Vector4 & rhs);
 
+	
+
+	Vector4 min(const Vector4 & rhs);
+
 	//Do you even swizzle
+	MATH_DLL	Vector4 max(const Vector4 & rhs);
+	MATH_DLL	Vector4 clamp(Vector4 & min, Vector4 & max);
 	MATH_DLL	Vector4 xxxx();
 	MATH_DLL	Vector4 xxxy();
 	MATH_DLL	Vector4 xxxz();

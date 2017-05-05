@@ -30,6 +30,7 @@ public:
 	MATH_DLL	float Magnitude();
 	MATH_DLL	float sqrMagnitude();
 	MATH_DLL	void Normalise();
+	MATH_DLL	float Distance(Vector3 rhs);
 	MATH_DLL	float Dot(Vector3 rhs);
 	MATH_DLL	bool operator> (const Vector3& rhs);
 	MATH_DLL	bool operator< (const Vector3& rhs);

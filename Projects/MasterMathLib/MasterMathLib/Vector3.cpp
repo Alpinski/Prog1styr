@@ -138,6 +138,20 @@ void Vector3::Normalise()
 	}
 }
 
+float Vector3::Distance(Vector3 rhs)
+{
+	float dist;
+	Vector3 result;
+	result.x = x - rhs.x;
+	result.y = y - rhs.y;
+	result.z = z - rhs.z;
+
+	dist = result.Magnitude();
+
+	return dist;
+}
+
+
 Vector3 Vector3::Normalised(Vector3 data)
 {
 	Vector3 result;

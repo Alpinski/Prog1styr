@@ -233,6 +233,67 @@ float Vector4::Distance(Vector4 rhs)
 	return dist;
 }
 
+
+Vector4 Vector4::min(const Vector4 & rhs)
+{
+	Vector4 result;
+	if (x < rhs.x)
+		result.x = x;
+	else
+		result.x = x;
+
+	if (y < rhs.y)
+		result.y = y;
+	else
+		result.y = y;
+
+	if (z < rhs.z)
+		result.z = z;
+	else
+		result.z = z;
+
+	if (w < rhs.w)
+		result.w = w;
+	else
+		result.w = w;
+
+	return result;
+}
+//PUT RHS ON ELSE YOU DUMBASS KYS NEXT YEAR AROUND AUGUST
+Vector4 Vector4::max(const Vector4 & rhs)
+{
+	Vector4 result;
+	if (x > rhs.x)
+		result.x = x;
+	else
+		result.x = x;
+
+	if (y > rhs.y)
+		result.y = y;
+	else
+		result.y = y;
+
+	if (z > rhs.z)
+		result.z = z;
+	else
+		result.z = z;
+
+	if (w > rhs.w)
+		result.w = w;
+	else
+		result.w = w;
+
+	return result;
+}
+
+Vector4 Vector4::clamp(Vector4& min, Vector4& max)
+{
+	Vector4 result;
+	result = this->min(min);
+	result = result.max(max);
+	return result;
+}
+
 //Swizzles the elements of the vector, assigning differing values depending on the variables in the function name
 Vector4 Vector4::xxxx()
 {

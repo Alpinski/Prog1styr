@@ -126,6 +126,19 @@ Vector2 Vector2::Normalised(Vector2 data)
 	return result;
 }
 
+
+float Vector2::Distance(Vector2 rhs)
+{
+	float dist;
+	Vector2 result;
+	result.x = x - rhs.x;
+	result.y = y - rhs.y;
+
+	dist = result.Magnitude();
+
+	return dist;
+}
+
 Vector2 Vector2::operatorDiv(const float rhs)
 {
 	Vector2 result;

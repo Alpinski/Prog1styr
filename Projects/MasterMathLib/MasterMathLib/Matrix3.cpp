@@ -130,6 +130,15 @@ void Matrix3::setPosition(const Vector2& rhs)
 	m[2][2] = 1;
 }
 
+Vector3 Matrix3::getPosition(const float x, const float y, const float z)
+{
+	Vector3 result;
+	result.x = m[0][3];
+	result.y = m[1][3];
+	result.z = m[2][3];
+	return result;
+}
+
 void Matrix3::setScale(const float x, const float y)
 {
 	m[0][0] = x;
@@ -141,6 +150,15 @@ void Matrix3::setScale(const float x, const float y)
 	m[0][2] = 0;
 	m[1][2] = 0;
 	m[2][2] = 1;
+}
+
+Vector3 Matrix3::getScale()
+{
+	Vector3 result;
+	result.x = m[0][0];
+	result.y = m[1][1];
+	result.z = m[2][2];
+	return result;
 }
 
 Vector3& Matrix3::operator[](const int rhs)
@@ -165,4 +183,53 @@ float Matrix3::convertDegToRad(float Degree)
 	float Radian;
 	Radian = Degree * (M_PI / 180.0f);
 	return Radian;
+}
+
+Matrix3 Matrix3::Transpose()
+{
+	for (int i = 0; i < 4; ++i)
+	{
+		for (int j = 0; j < 4; ++j)
+		{
+			m[i][j] = m[j][i];
+		}
+	}
+}
+
+float Matrix3::Determinant(float Det)
+{
+	float A = m[0][0];
+	float B = m[1][0];
+	float C = m[2][0];
+	float D = m[0][1];
+	float E = m[1][1];
+	float F = m[2][1];
+	float G = m[0][2];
+	float H = m[1][2];
+	float I = m[2][2];
+
+	return Det = A*(E*I - F*H)
+		- B*(D*I - F*G)
+		+ C*(D*H - E*G);
+}
+
+bool Matrix3::isIdentity()
+{
+	int count = 0;
+	for (int i = 0; i < 3; ++i)
+	{
+		for (int j = 0; j < 3; ++j)
+		{
+			if (i == j && m[i][j] == 1)
+				++count;
+			else if (i != j && m[i][j] == 0)
+				++count;
+		}
+	}
+	if (count == 9)
+	{
+		return true;
+	}
+
+	return false;
 }

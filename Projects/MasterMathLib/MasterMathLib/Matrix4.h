@@ -30,11 +30,15 @@ public:
 	MATH_DLL	void setRotationY(const float a);
 	MATH_DLL	void setRotationZ(const float a);
 	MATH_DLL	void setPosition(const Vector3& rhs);
+	MATH_DLL	Vector3 getPosition(const float x, const float y, const float z);
 	MATH_DLL	void setScale(const float x, const float y, const float z);
+	MATH_DLL	Vector3 getScale(const float x, const float y, const float z);
+	MATH_DLL	Matrix4 Transpose();
+	MATH_DLL	float Determinant(const float Det);
+	MATH_DLL	bool isIdentity();
 	MATH_DLL	void setRotationDegX(const float a);
 	MATH_DLL	void setRotationDegY(const float a);
 	MATH_DLL	void setRotationDegZ(const float a);
-	MATH_DLL	void setRotationDegW(const float a);
 	MATH_DLL	operator float*();
 
 	float m[4][4];

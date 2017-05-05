@@ -1,4 +1,6 @@
 #pragma once
+#include "Vector2.h"
+
 
 #ifdef STATIC_LIB//STATIC
 	#define MATH_DLL 
@@ -20,6 +22,7 @@ public:
 	MATH_DLL	Vector2 operator+(const Vector2& rhs);
 	MATH_DLL	Vector2 operator-(const Vector2 & rhs);
 	MATH_DLL	Vector2 operator*(const float rhs);
+	MATH_DLL	float Distance(Vector2 rhs);
 	MATH_DLL	Vector2 operatorDiv(const float rhs);
 	MATH_DLL	Vector2 posOperator();
 	MATH_DLL	Vector2 operator-();

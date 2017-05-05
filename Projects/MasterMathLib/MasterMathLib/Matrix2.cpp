@@ -57,6 +57,16 @@ void Matrix2::setScale(const float x, const float y)
 	m[1][1] = y;
 }
 
+Vector2 Matrix2::getScale(const float x, const float y, const float z)
+{
+	Vector2 result;
+	result.x = m[0][0];
+	result.y = m[1][1];
+
+	return result;
+}
+
+
 void Matrix2::setRotationDeg(const float a)
 {
 	float rad = convertDegToRad(a);
@@ -85,4 +95,46 @@ float Matrix2::convertDegToRad(float Degree)
 	float Radian;
 	Radian = Degree * (M_PI / 180.0f);
 	return Radian;
+}
+
+Matrix2 Matrix2::Transpose()
+{
+	for (int i = 0; i < 2; ++i)
+	{
+		for (int j = 0; j < 2; ++j)
+		{
+			m[i][j] = m[j][i];
+		}
+	}
+}
+
+float Matrix2::Determinant(float Det)
+{
+	float A = m[0][0];
+	float B = m[0][0];
+	float C = m[1][0];
+	float D = m[2][0];
+
+	return Det = A*D - B*C;
+}
+
+bool Matrix2::isIdentity()
+{
+	int count = 0;
+	for (int i = 0; i < 2; ++i)
+	{
+		for (int j = 0; j < 2; ++j)
+		{
+			if (i == j && m[i][j] == 1)
+				++count;
+			else if (i != j && m[i][j] == 0)
+				++count;
+		}
+	}
+	if (count == 4)
+	{
+		return true;
+	}
+
+	return false;
 }
