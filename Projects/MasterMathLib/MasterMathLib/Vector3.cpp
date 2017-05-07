@@ -1,38 +1,25 @@
 #include "Vector3.h"
 #include <math.h>
 
-//--------------------------------------------------------------------------------------
-//Constructor
-//--------------------------------------------------------------------------------------
 Vector3::Vector3()
 {
 	x = 0.0f;
 	y = 0.0f;
 	z = 0.0f;
 }
-//--------------------------------------------------------------------------------------
-//Constructor
-//--------------------------------------------------------------------------------------
+
 Vector3::Vector3(float newX, float newY, float newZ)
 {
 	x = newX;
 	y = newY;
 	z = newZ;
 }
-//--------------------------------------------------------------------------------------
-//Deconstructor
-//--------------------------------------------------------------------------------------
+
+
 Vector3::~Vector3()
 {
 }
-//--------------------------------------------------------------------------------------
-// Adds two vector3s together
-//
-// Param:
-//		takes in a vector3
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 Vector3 Vector3::operator+(const Vector3& rhs)
 {
 	Vector3 result;
@@ -42,14 +29,13 @@ Vector3 Vector3::operator+(const Vector3& rhs)
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-// Subtracts two vector4s together
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
+//Vector3 Vector3::Add(const Vector3& rhs)
+//{
+//	return Translate(rhs);
+//	
+//}
+
 Vector3 Vector3::operator-(const Vector3& rhs)
 {
 	Vector3 result;
@@ -59,14 +45,7 @@ Vector3 Vector3::operator-(const Vector3& rhs)
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-// times two vector4s together
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 Vector3 Vector3::operator*(const float rhs)
 {
 	Vector3 result;
@@ -76,15 +55,8 @@ Vector3 Vector3::operator*(const float rhs)
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-// times a float and a vector4 together
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 operator*(float lhs, const Vector3& rhs)
+
+Vector3 operator*(float lhs, const Vector3 rhs)
 {
 	Vector3 result;
 	result.x = lhs * rhs.x;
@@ -92,101 +64,47 @@ Vector3 operator*(float lhs, const Vector3& rhs)
 	result.z = lhs * rhs.z;
 	return result;
 }
-//--------------------------------------------------------------------------------------
-// takes two equal-length sequences of numbers and returns a single number.
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-float Vector3::Dot(Vector3& rhs)
+
+float Vector3::Dot(Vector3 rhs)
 {
 	float result;
 	result = x * rhs.x + y * rhs.y + z * rhs.z;
 	return result;
 }
-//--------------------------------------------------------------------------------------
-// returns true or false depending on if the number is greater than the other number
-//
-// Param:
-//		input: takes a vector4 
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
+
 bool Vector3::operator> (const Vector3& rhs)
 {
 	return(x > rhs.x && y > rhs.y && z > rhs.z);
 }
-//--------------------------------------------------------------------------------------
-// returns true or false depending on if the number is less than the other number
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
 bool Vector3::operator< (const Vector3& rhs)
 {
 	return(x < rhs.x && y < rhs.y && z < rhs.z);
 }
-//--------------------------------------------------------------------------------------
-// returns true or false depending on if the number is equal to the other number
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
 bool Vector3::operator==(const Vector3& rhs)
 {
 	return(x == rhs.x && y == rhs.y && z == rhs.z);
 }
-//--------------------------------------------------------------------------------------
-// returns true or false depending on if the number does not equal to the other number
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
 bool Vector3::operator!=(const Vector3& rhs)
 {
 	return(x != rhs.x && y != rhs.y && z != rhs.z);
 }
-//--------------------------------------------------------------------------------------
-// returns true or false depending on if the number greater than or equal to the other number
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
 bool Vector3::operator<=(const Vector3& rhs)
 {
 	return(x <= rhs.x && y <= rhs.y && z <= rhs.z);
 }
-//--------------------------------------------------------------------------------------
-// returns true or false depending on if the number less than or equal to the other number
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
 bool Vector3::operator>=(const Vector3& rhs)
 {
 	return(x >= rhs.x && y >= rhs.y && z >= rhs.z);
 }
-//--------------------------------------------------------------------------------------
-//the cross product is a 
-//
-// Param:
-//		takes in a vector4 
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 Vector3::Cross(Vector3& rhs)
+
+
+Vector3 Vector3::Cross(Vector3 rhs)
 {
 	Vector3 result;
 	result.x = y * rhs.z - z * rhs.y;
@@ -194,43 +112,21 @@ Vector3 Vector3::Cross(Vector3& rhs)
 	result.z = x * rhs.y - y * rhs.x;
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//How large an object is
-//
-// Param:
-//		none
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 float Vector3::Magnitude()
 {
 	float result;
 	result = sqrtf((x*x) + (y*y) + (z*z));
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//square of a magnitude
-//
-// Param:
-//		none
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 float Vector3::sqrMagnitude()
 {
 	float result;
 	result = (x*x) + (y*y) + (z*z);
 	return result;
 }
-//--------------------------------------------------------------------------------------
-////multiply by a factor that makes an integral equal to a desired value
 
-//
-// Param:
-//		Takes in a Vector4
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
 void Vector3::Normalise()
 {
 	float length = Magnitude();
@@ -241,36 +137,8 @@ void Vector3::Normalise()
 		z /= length;
 	}
 }
-//--------------------------------------------------------------------------------------
-//normalise the magnitude
-//
-// Param:
-//		Takes in a Vector4
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 Vector3::Normalised(Vector3& data)
-{
-	Vector3 result;
-	float Mag = data.Magnitude();
-	if (!Mag == 0)
-	{
-		result.x = x / Mag;
-		result.y = y / Mag;
-		result.z = z / Mag;
 
-	}
-	return result;
-}
-//--------------------------------------------------------------------------------------
-//calculates the distance between two vector4s
-//
-// Param:
-//		Takes in a Vector4
-// Return:
-//		returns the dist
-//--------------------------------------------------------------------------------------
-float Vector3::Distance(Vector3& rhs)
+float Vector3::Distance(Vector3 rhs)
 {
 	float dist;
 	Vector3 result;
@@ -282,31 +150,21 @@ float Vector3::Distance(Vector3& rhs)
 
 	return dist;
 }
-//--------------------------------------------------------------------------------------
-//Divides two vectors
-//
-// Param:
-//		Takes in a float
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 Vector3::operator/(const float rhs)
+
+
+Vector3 Vector3::Normalised(Vector3 data)
 {
 	Vector3 result;
-	result.x = x / rhs;
-	result.y = y / rhs;
-	result.z = z / rhs;
-
+	float Mag = data.Magnitude();
+	if (!Mag == 0)
+	{
+		result.x = x / Mag;
+		result.y = y / Mag;
+		result.z = z / Mag;
+	}
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//positive number
-//
-// Param:
-//		none
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 Vector3 Vector3::posOperator()
 {
 	Vector3 result;
@@ -316,14 +174,7 @@ Vector3 Vector3::posOperator()
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//negative number
-//
-// Param:
-//		none
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 Vector3 Vector3::operator-()
 {
 	Vector3 result;
@@ -333,14 +184,24 @@ Vector3 Vector3::operator-()
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//short for x = x + y
+
+
+//Vector3 Vector3::Multiply(float scalar)
+//{
+//	return Scale(scalar);
 //
-// Param:
-//		Takes in a Vector4
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+//}
+
+Vector3 Vector3::operator/(const float rhs)
+{
+	Vector3 result;
+	result.x = x / rhs;
+	result.y = y / rhs;
+	result.z = z / rhs;
+
+	return result;
+}
+
 Vector3 Vector3::operator+= (const Vector3& rhs)
 {
 	x += rhs.x;
@@ -374,85 +235,8 @@ Vector3::operator float*()
 {
 	return &x;
 }
-//--------------------------------------------------------------------------------------
-//calculates the minimum of the vector4
-//
-// Param:
-//		Takes in a Vector4
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 Vector3::min(const Vector3 & rhs)
-{
-	Vector3 result;
-	if (x < rhs.x)
-		result.x = x;
-	else
-		result.x = rhs.x;
 
-	if (y < rhs.y)
-		result.y = y;
-	else
-		result.y = rhs.y;
-
-	if (z < rhs.z)
-		result.z = z;
-	else
-		result.z = rhs.z;
-
-	return result;
-}
-//--------------------------------------------------------------------------------------
-//calculates the maximum of the vector4
-//
-// Param:
-//		Takes in a Vector4
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 Vector3::max(const Vector3& rhs)
-{
-	Vector3 result;
-	if (x > rhs.x)
-		result.x = x;
-	else
-		result.x = rhs.x;
-
-	if (y > rhs.y)
-		result.y = y;
-	else
-		result.y = rhs.y;
-
-	if (z > rhs.z)
-		result.z = z;
-	else
-		result.z = rhs.z;
-
-	return result;
-}
-//--------------------------------------------------------------------------------------
-//moves the point to the nearest available value.
-//
-// Param:
-//		Takes in two Vector4s
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
-Vector3 Vector3::clamp(Vector3& min, Vector3& max)
-{
-	Vector3 result;
-	result = this->min(min);
-	result = result.max(max);
-	return result;
-}
-//--------------------------------------------------------------------------------------
 //Swizzles the elements of the vector, assigning differing values depending on the variables in the function name
-//
-// Param:
-//		none
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
 Vector3 Vector3::xxx()
 {
 	Vector3 result;

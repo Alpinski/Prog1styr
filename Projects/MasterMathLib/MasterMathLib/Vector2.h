@@ -20,29 +20,25 @@ public:
 	MATH_DLL	~Vector2();
 
 	MATH_DLL	Vector2 operator+(const Vector2& rhs);
-	MATH_DLL	Vector2 operator-(const Vector2& rhs);
+	MATH_DLL	Vector2 operator-(const Vector2 & rhs);
 	MATH_DLL	Vector2 operator*(const float rhs);
-	MATH_DLL	Vector2 operator/(const float rhs);
+	MATH_DLL	float Distance(Vector2 rhs);
+	MATH_DLL	Vector2 operatorDiv(const float rhs);
 	MATH_DLL	Vector2 posOperator();
 	MATH_DLL	Vector2 operator-();
 	MATH_DLL	Vector2 operator+=(const Vector2& rhs);
-	MATH_DLL	Vector2 Normalised(Vector2& data);
-	MATH_DLL	Vector2 min(const Vector2& rhs);
-	MATH_DLL	Vector2 max(const Vector2& rhs);
-	MATH_DLL	Vector2 clamp(Vector2& min, Vector2 & max);
-	MATH_DLL	float Distance(Vector2& rhs);
+	MATH_DLL	Vector2 Normalised(Vector2 data);
 	MATH_DLL	float & operator[](const int rhs);
 	MATH_DLL	operator float*();
-	MATH_DLL	bool operator>=(const Vector2& rhs);
+	MATH_DLL	bool operator>=(const Vector2 & rhs);
 	MATH_DLL	float Magnitude();
-	MATH_DLL	float sqrMagnitude();
 	MATH_DLL	void Normalise();
-	MATH_DLL	float Dot(Vector2& rhs);
+	MATH_DLL	float Dot(Vector2 rhs);
 	MATH_DLL	bool operator> (const Vector2& rhs);
 	MATH_DLL	bool operator< (const Vector2& rhs);
-	MATH_DLL	bool operator==(const Vector2& rhs);
-	MATH_DLL	bool operator!=(const Vector2& rhs);
-	MATH_DLL	bool operator<=(const Vector2& rhs);
+	MATH_DLL	bool operator==(const Vector2 & rhs);
+	MATH_DLL	bool operator!=(const Vector2 & rhs);
+	MATH_DLL	bool operator<=(const Vector2 & rhs);
 
 	MATH_DLL	Vector2 xx();
 	MATH_DLL	Vector2 xy();

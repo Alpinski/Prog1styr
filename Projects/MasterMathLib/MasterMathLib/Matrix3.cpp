@@ -1,9 +1,7 @@
 ﻿#include "matrix3.h"
 #include <math.h>
 
-//--------------------------------------------------------------------------------------
-//Constructor
-//--------------------------------------------------------------------------------------
+
 Matrix3::Matrix3()
 {
 	m[0][0] = 1;
@@ -16,9 +14,7 @@ Matrix3::Matrix3()
 	m[2][1] = 0;
 	m[2][2] = 1;
 }
-//--------------------------------------------------------------------------------------
-//Constructor
-//--------------------------------------------------------------------------------------
+
 Matrix3::Matrix3(float xx, float xy, float xz, float yx, float yy, float yz, float zx, float zy, float zz)
 {
 	m[0][0] = xx;
@@ -31,20 +27,11 @@ Matrix3::Matrix3(float xx, float xy, float xz, float yx, float yy, float yz, flo
 	m[2][1] = zy;
 	m[2][2] = zz;
 }
-//--------------------------------------------------------------------------------------
-//Deconstructor
-//--------------------------------------------------------------------------------------
+
 Matrix3::~Matrix3()
 {
 }
-//--------------------------------------------------------------------------------------
-// Times matrix4 with Vector4
-//
-// Param:
-//		takes in a vector4
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 Vector3 Matrix3::operator*(const Vector3& rhs)
 {
 	Vector3 result;
@@ -54,14 +41,7 @@ Vector3 Matrix3::operator*(const Vector3& rhs)
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-// Times two matrix3s together
-//
-// Param:
-//		takes in a matrix3
-// Return:
-//		returns the result
-//--------------------------------------------------------------------------------------
+
 Matrix3 Matrix3::operator*(const Matrix3& rhs)
 {
 	Matrix3 result;
@@ -79,14 +59,7 @@ Matrix3 Matrix3::operator*(const Matrix3& rhs)
 
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//sets rotation for the x axis
-//
-// Param:
-//		takes in a float
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
+
 void Matrix3::setRotationX(const float a)
 {
 	m[0][0] = 1;
@@ -99,14 +72,7 @@ void Matrix3::setRotationX(const float a)
 	m[1][2] = sinf(a);
 	m[2][2] = cosf(a);
 }
-//--------------------------------------------------------------------------------------
-//sets rotation for the y axis
-//
-// Param:
-//		takes in a float
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
+
 void Matrix3::setRotationY(const float a)
 {
 	m[0][0] = cosf(a);
@@ -119,14 +85,7 @@ void Matrix3::setRotationY(const float a)
 	m[1][2] = 0;
 	m[2][2] = cosf(a);
 }
-//--------------------------------------------------------------------------------------
-//sets rotation for the z axis
-//
-// Param:
-//		takes in a float
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
+
 void Matrix3::setRotationZ(const float a)
 {
 	m[0][0] = cosf(a);
@@ -139,14 +98,25 @@ void Matrix3::setRotationZ(const float a)
 	m[1][2] = 0;
 	m[2][2] = 1;
 }
-//--------------------------------------------------------------------------------------
-//sets the position 
-//
-// Param:
-//		takes in a vector3
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
+
+void Matrix3::setRotationDegX(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationX(rad);
+}
+
+void Matrix3::setRotationDegY(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationY(rad);
+}
+
+void Matrix3::setRotationDegZ(const float a)
+{
+	float rad = convertDegToRad(a);
+	setRotationZ(rad);
+}
+
 void Matrix3::setPosition(const Vector2& rhs)
 {
 	m[0][0] = 1;
@@ -159,14 +129,7 @@ void Matrix3::setPosition(const Vector2& rhs)
 	m[1][2] = rhs.y;
 	m[2][2] = 1;
 }
-//--------------------------------------------------------------------------------------
-//gets the position 
-//
-// Param:
-//		takes in three floats
-// Return:
-//		returns result
-//--------------------------------------------------------------------------------------
+
 Vector3 Matrix3::getPosition(const float x, const float y, const float z)
 {
 	Vector3 result;
@@ -175,14 +138,7 @@ Vector3 Matrix3::getPosition(const float x, const float y, const float z)
 	result.z = m[2][3];
 	return result;
 }
-//--------------------------------------------------------------------------------------
-//sets the scale 
-//
-// Param:
-//		takes in three floats
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
+
 void Matrix3::setScale(const float x, const float y)
 {
 	m[0][0] = x;
@@ -195,14 +151,7 @@ void Matrix3::setScale(const float x, const float y)
 	m[1][2] = 0;
 	m[2][2] = 1;
 }
-//--------------------------------------------------------------------------------------
-//gets the scale 
-//
-// Param:
-//		takes in three floats
-// Return:
-//		returns result
-//--------------------------------------------------------------------------------------
+
 Vector3 Matrix3::getScale()
 {
 	Vector3 result;
@@ -210,45 +159,6 @@ Vector3 Matrix3::getScale()
 	result.y = m[1][1];
 	result.z = m[2][2];
 	return result;
-}
-//--------------------------------------------------------------------------------------
-//sets rotation for x axis in degrees
-//
-// Param:
-//		takes in a float
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
-void Matrix3::setRotationDegX(const float a)
-{
-	float rad = convertDegToRad(a);
-	setRotationX(rad);
-}
-//--------------------------------------------------------------------------------------
-//sets rotation for y axis in degrees
-//
-// Param:
-//		takes in a float
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
-void Matrix3::setRotationDegY(const float a)
-{
-	float rad = convertDegToRad(a);
-	setRotationY(rad);
-}
-//--------------------------------------------------------------------------------------
-//sets rotation for z axis in degrees
-//
-// Param:
-//		takes in a float
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
-void Matrix3::setRotationDegZ(const float a)
-{
-	float rad = convertDegToRad(a);
-	setRotationZ(rad);
 }
 
 Vector3& Matrix3::operator[](const int rhs)
@@ -260,42 +170,21 @@ Matrix3::operator float*()
 {
 	return &m[0][0];
 }
-//--------------------------------------------------------------------------------------
-//converts radians to degrees
-//
-// Param:
-//		takes in a float
-// Return:
-//		returns Degree
-//--------------------------------------------------------------------------------------
+
 float Matrix3::convertRadToDeg(float Radian)
 {
 	float Degree;
 	Degree = Radian * (180.0f / M_PI);
 	return Degree;
 }
-//--------------------------------------------------------------------------------------
-//converts degrees to radians
-//
-// Param:
-//		takes in a float
-// Return:
-//		returns Radian
-//--------------------------------------------------------------------------------------
+
 float Matrix3::convertDegToRad(float Degree)
 {
 	float Radian;
 	Radian = Degree * (M_PI / 180.0f);
 	return Radian;
 }
-//--------------------------------------------------------------------------------------
-// interchanges each row and the corresponding column.
-//
-// Param:
-//		none
-// Return:
-//		none
-//--------------------------------------------------------------------------------------
+
 Matrix3 Matrix3::Transpose()
 {
 	for (int i = 0; i < 4; ++i)
@@ -323,14 +212,7 @@ float Matrix3::Determinant(float Det)
 		- B*(D*I - F*G)
 		+ C*(D*H - E*G);
 }
-//--------------------------------------------------------------------------------------
-//Checks if matrix is an identity matrix
-//
-// Param:
-//		none
-// Return:
-//		returns true or false
-//--------------------------------------------------------------------------------------
+
 bool Matrix3::isIdentity()
 {
 	int count = 0;
@@ -350,21 +232,4 @@ bool Matrix3::isIdentity()
 	}
 
 	return false;
-}
-
-void Matrix3::lookAt(Vector3 from, const Vector3 target, Vector3 up)
-{
-	Vector3 zaxis = from - target;
-	zaxis.Normalise();
-	Vector3 xaxis = zaxis.Cross(up);
-	xaxis.Normalise();
-	Vector3 yaxis = xaxis.Cross(zaxis);
-	yaxis.Normalise();
-
-	(*this)[0] = CastTo<Vector3>(xaxis);
-	(*this)[1] = CastTo<Vector3>(yaxis);
-	(*this)[2] = CastTo<Vector3>(zaxis);
-	(*this)[3] = CastTo<Vector3>(from);
-
-	m[3][3] = 1;
 }
