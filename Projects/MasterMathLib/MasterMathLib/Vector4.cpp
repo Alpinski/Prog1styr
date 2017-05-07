@@ -1,7 +1,9 @@
 #include "Vector4.h"
 #include <math.h>
 
-
+//--------------------------------------------------------------------------------------
+//Constructor
+//--------------------------------------------------------------------------------------
 Vector4::Vector4()
 {
 	x = 0.0f;
@@ -9,7 +11,9 @@ Vector4::Vector4()
 	z = 0.0f;
 	w = 0.0f;
 }
-
+//--------------------------------------------------------------------------------------
+//Constructor
+//--------------------------------------------------------------------------------------
 Vector4::Vector4(float newX, float newY, float newZ, float newW)
 {
 	x = newX;
@@ -17,11 +21,20 @@ Vector4::Vector4(float newX, float newY, float newZ, float newW)
 	z = newZ;
 	w = newW;
 }
-
+//--------------------------------------------------------------------------------------
+//Deconstructor
+//--------------------------------------------------------------------------------------
 Vector4::~Vector4()
 {
 }
-
+//--------------------------------------------------------------------------------------
+// Adds two vector4s together
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::operator+(const Vector4& rhs)
 {
 	Vector4 result;
@@ -32,13 +45,14 @@ Vector4 Vector4::operator+(const Vector4& rhs)
 
 	return result;
 }
-
-//Vector3 Vector3::Add(const Vector3& rhs)
-//{
-//	return Translate(rhs);
-//	
-//}
-
+//--------------------------------------------------------------------------------------
+// Subtracts two vector4s together
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::operator-(const Vector4& rhs)
 {
 	Vector4 result;
@@ -49,7 +63,14 @@ Vector4 Vector4::operator-(const Vector4& rhs)
 
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+// times two vector4s together
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::operator*(const float rhs)
 {
 	Vector4 result;
@@ -60,8 +81,15 @@ Vector4 Vector4::operator*(const float rhs)
 
 	return result;
 }
-
-Vector4 operator*(float lhs, const Vector4 rhs)
+//--------------------------------------------------------------------------------------
+// times a float and a vector4 together
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
+Vector4 operator*(float lhs, const Vector4& rhs)
 {
 	Vector4 result;
 	result.x = lhs * rhs.x;
@@ -71,16 +99,101 @@ Vector4 operator*(float lhs, const Vector4 rhs)
 
 	return result;
 }
-
-float Vector4::Dot(Vector4 rhs)
+//--------------------------------------------------------------------------------------
+// takes two equal-length sequences of numbers and returns a single number.
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
+float Vector4::Dot(Vector4& rhs)
 {
 	float result;
 	result = x * rhs.x + y * rhs.y + z * rhs.z + w * rhs.w;
 	return result;
 }
-
-
-Vector4 Vector4::Cross(Vector4 rhs)
+//--------------------------------------------------------------------------------------
+// returns true or false depending on if the number is greater than the other number
+//
+// Param:
+//		input: takes a vector4 
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
+bool Vector4:: operator> (const Vector4& rhs)
+{
+	return(x > rhs.x && y > rhs.y && z > rhs.z && w > rhs.w);
+}
+//--------------------------------------------------------------------------------------
+// returns true or false depending on if the number is less than the other number
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
+bool Vector4:: operator< (const Vector4& rhs)
+{
+	return(x < rhs.x && y < rhs.y && z < rhs.z && w < rhs.w);
+}
+//--------------------------------------------------------------------------------------
+// returns true or false depending on if the number is equal to the other number
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
+bool Vector4::operator==(const Vector4& rhs)
+{
+	return(x == rhs.x && y == rhs.y && z == rhs.z && w == rhs.w);
+}
+//--------------------------------------------------------------------------------------
+// returns true or false depending on if the number does not equal to the other number
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
+bool Vector4::operator!=(const Vector4& rhs)
+{
+	return(x != rhs.x && y != rhs.y && z != rhs.z && w != rhs.w);
+}
+//--------------------------------------------------------------------------------------
+// returns true or false depending on if the number greater than or equal to the other number
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
+bool Vector4::operator>=(const Vector4& rhs)
+{
+	return(x >= rhs.x && y >= rhs.y && z >= rhs.z && w >= rhs.w);
+}
+//--------------------------------------------------------------------------------------
+// returns true or false depending on if the number less than or equal to the other number
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
+bool Vector4::operator<=(const Vector4& rhs)
+{
+	return(x <= rhs.x && y <= rhs.y && z <= rhs.z && w <= rhs.w);
+}
+//--------------------------------------------------------------------------------------
+//the cross product is a 
+//
+// Param:
+//		takes in a vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
+Vector4 Vector4::Cross(Vector4& rhs)
 {
 	Vector4 result;
 	result.x = y * rhs.z - z * rhs.y;
@@ -89,14 +202,42 @@ Vector4 Vector4::Cross(Vector4 rhs)
 	result.w = 0;
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//How large an object is
+//
+// Param:
+//		none
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 float Vector4::Magnitude()
 {
 	float result;
 	result = sqrtf((x*x) + (y*y) + (z*z) + (w*w));
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//square of a magnitude
+//
+// Param:
+//		none
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
+float Vector4::sqrMagnitude()
+{
+	float result;
+	result = (x*x) + (y*y) + (z*z);
+	return result;
+}
+//--------------------------------------------------------------------------------------
+//multiply by a factor that makes an integral equal to a desired value
+//
+// Param:
+//		none
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 void Vector4::Normalise()
 {
 	float length = Magnitude();
@@ -108,7 +249,35 @@ void Vector4::Normalise()
 		w /= length;
 	}
 }
-
+//--------------------------------------------------------------------------------------
+//normalise the magnitude
+//
+// Param:
+//		Takes in a Vector4
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
+Vector4 Vector4::Normalised(Vector4& data)
+{
+	Vector4 result;
+	float Mag = data.Magnitude();
+	if (!Mag == 0)
+	{
+		result.x = x / Mag;
+		result.y = y / Mag;
+		result.z = z / Mag;
+		result.w = w / Mag;
+	}
+	return result;
+}
+//--------------------------------------------------------------------------------------
+//positive number
+//
+// Param:
+//		none
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::posOperator()
 {
 	Vector4 result;
@@ -119,7 +288,14 @@ Vector4 Vector4::posOperator()
 
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//negative number
+//
+// Param:
+//		none
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::operator-()
 {
 	Vector4 result;
@@ -130,13 +306,14 @@ Vector4 Vector4::operator-()
 
 	return result;
 }
-
-//Vector3 Vector3::Multiply(float scalar)
-//{
-//	return Scale(scalar);
+//--------------------------------------------------------------------------------------
+//Divides two vectors
 //
-//}
-
+// Param:
+//		Takes in a float
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::operator/(const float rhs)
 {
 	Vector4 result;
@@ -146,7 +323,14 @@ Vector4 Vector4::operator/(const float rhs)
 	result.w = w / rhs;
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//short for x = x + y
+//
+// Param:
+//		Takes in a Vector4
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::operator+= (const Vector4& rhs)
 {
 	x += rhs.x;
@@ -156,39 +340,6 @@ Vector4 Vector4::operator+= (const Vector4& rhs)
 
 	return *this;
 }
-
-
-bool Vector4:: operator> (const Vector4& rhs)
-{
-	return(x > rhs.x && y > rhs.y && z > rhs.z && w > rhs.w);
-}
-
-bool Vector4:: operator< (const Vector4& rhs)
-{
-	return(x < rhs.x && y < rhs.y && z < rhs.z && w < rhs.w);
-}
-
-bool Vector4::operator==(const Vector4& rhs)
-{
-	return(x == rhs.x && y == rhs.y && z == rhs.z && w == rhs.w);
-}
-
-bool Vector4::operator!=(const Vector4& rhs)
-{
-	return(x != rhs.x && y != rhs.y && z != rhs.z && w != rhs.w);
-}
-
-bool Vector4::operator<=(const Vector4& rhs)
-{
-	return(x <= rhs.x && y <= rhs.y && z <= rhs.z && w <= rhs.w);
-}
-
-bool Vector4::operator>=(const Vector4& rhs)
-{
-	return(x >= rhs.x && y >= rhs.y && z >= rhs.z && w >= rhs.w);
-}
-
-
 
 float& Vector4::operator[](const int rhs)
 {
@@ -218,8 +369,15 @@ Vector4::operator float*()
 {
 	return &x;
 }
-
-float Vector4::Distance(Vector4 rhs)
+//--------------------------------------------------------------------------------------
+//calculates the distance between two vector4s
+//
+// Param:
+//		Takes in a Vector4
+// Return:
+//		returns the dist
+//--------------------------------------------------------------------------------------
+float Vector4::Distance(Vector4& rhs)
 {
 	float dist;
 	Vector4 result;
@@ -232,60 +390,80 @@ float Vector4::Distance(Vector4 rhs)
 
 	return dist;
 }
-
-
+//--------------------------------------------------------------------------------------
+//calculates the minimum of the vector4
+//
+// Param:
+//		Takes in a Vector4
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::min(const Vector4 & rhs)
 {
 	Vector4 result;
 	if (x < rhs.x)
 		result.x = x;
 	else
-		result.x = x;
+		result.x = rhs.x;
 
 	if (y < rhs.y)
 		result.y = y;
 	else
-		result.y = y;
+		result.y = rhs.y;
 
 	if (z < rhs.z)
 		result.z = z;
 	else
-		result.z = z;
+		result.z = rhs.z;
 
 	if (w < rhs.w)
 		result.w = w;
 	else
-		result.w = w;
+		result.w = rhs.w;
 
 	return result;
 }
-//PUT RHS ON ELSE YOU DUMBASS KYS NEXT YEAR AROUND AUGUST
+//--------------------------------------------------------------------------------------
+//calculates the maximum of the vector4
+//
+// Param:
+//		Takes in a Vector4
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::max(const Vector4 & rhs)
 {
 	Vector4 result;
 	if (x > rhs.x)
 		result.x = x;
 	else
-		result.x = x;
+		result.x = rhs.x;
 
 	if (y > rhs.y)
 		result.y = y;
 	else
-		result.y = y;
+		result.y = rhs.y;
 
 	if (z > rhs.z)
 		result.z = z;
 	else
-		result.z = z;
+		result.z = rhs.z;
 
 	if (w > rhs.w)
 		result.w = w;
 	else
-		result.w = w;
+		result.w = rhs.w;
 
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//moves the point to the nearest available value.
+//
+// Param:
+//		Takes in two Vector4s
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::clamp(Vector4& min, Vector4& max)
 {
 	Vector4 result;
@@ -293,8 +471,14 @@ Vector4 Vector4::clamp(Vector4& min, Vector4& max)
 	result = result.max(max);
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
 //Swizzles the elements of the vector, assigning differing values depending on the variables in the function name
+//
+// Param:
+//		none
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Vector4::xxxx()
 {
 	Vector4 result;

@@ -24,28 +24,27 @@ public:
 	MATH_DLL	Vector4 posOperator();
 	MATH_DLL	Vector4 operator-();
 	MATH_DLL	Vector4 operator/(const float rhs);
-	MATH_DLL	Vector4 operator+=(const Vector4 & rhs);
-	MATH_DLL	Vector4 Cross(Vector4 rhs);
-	MATH_DLL	float & operator[](const int rhs);
-	MATH_DLL	operator float*();
-	MATH_DLL	float Magnitude();
-	MATH_DLL	void Normalise();
-	MATH_DLL	float Dot(Vector4 rhs);
-	MATH_DLL	float Distance(Vector4 rhs);
-	MATH_DLL	bool operator> (const Vector4& rhs);
-	MATH_DLL	bool operator< (const Vector4& rhs);
-	MATH_DLL	bool operator==(const Vector4 & rhs);
-	MATH_DLL	bool operator!=(const Vector4 & rhs);
-	MATH_DLL	bool operator<=(const Vector4 & rhs);
-	MATH_DLL	bool operator>=(const Vector4 & rhs);
-
-	
-
-	Vector4 min(const Vector4 & rhs);
-
-	//Do you even swizzle
+	MATH_DLL	Vector4 operator+=(const Vector4& rhs);
+	MATH_DLL	Vector4 Cross(Vector4& rhs);
+	MATH_DLL	Vector4 min(const Vector4 & rhs);
 	MATH_DLL	Vector4 max(const Vector4 & rhs);
 	MATH_DLL	Vector4 clamp(Vector4 & min, Vector4 & max);
+	MATH_DLL	Vector4 Normalised(Vector4 & data);
+	MATH_DLL	float& operator[](const int rhs);
+	MATH_DLL	operator float*();
+	MATH_DLL	float Magnitude();
+	MATH_DLL	float sqrMagnitude();
+	MATH_DLL	void Normalise();
+	MATH_DLL	float Dot(Vector4& rhs);
+	MATH_DLL	float Distance(Vector4& rhs);
+	MATH_DLL	bool operator> (const Vector4& rhs);
+	MATH_DLL	bool operator< (const Vector4& rhs);
+	MATH_DLL	bool operator==(const Vector4& rhs);
+	MATH_DLL	bool operator!=(const Vector4& rhs);
+	MATH_DLL	bool operator<=(const Vector4& rhs);
+	MATH_DLL	bool operator>=(const Vector4& rhs);
+	
+	//Do you even swizzle
 	MATH_DLL	Vector4 xxxx();
 	MATH_DLL	Vector4 xxxy();
 	MATH_DLL	Vector4 xxxz();
@@ -309,4 +308,4 @@ public:
 	float w;
 };
 
-	MATH_DLL	Vector4 operator*(float lhs, const Vector4 rhs);
+	MATH_DLL	Vector4 operator*(float lhs, const Vector4& rhs);
