@@ -43,10 +43,10 @@ Vector3 Vector3::operator+(const Vector3& rhs)
 	return result;
 }
 //--------------------------------------------------------------------------------------
-// Subtracts two vector4s together
+// Subtracts two vector3s together
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------
@@ -60,10 +60,10 @@ Vector3 Vector3::operator-(const Vector3& rhs)
 	return result;
 }
 //--------------------------------------------------------------------------------------
-// times two vector4s together
+// times two vector3s together
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------
@@ -77,10 +77,10 @@ Vector3 Vector3::operator*(const float rhs)
 	return result;
 }
 //--------------------------------------------------------------------------------------
-// times a float and a vector4 together
+// times a float and a vector3 together
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------
@@ -96,7 +96,7 @@ Vector3 operator*(float lhs, const Vector3& rhs)
 // takes two equal-length sequences of numbers and returns a single number.
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------
@@ -110,7 +110,7 @@ float Vector3::Dot(Vector3& rhs)
 // returns true or false depending on if the number is greater than the other number
 //
 // Param:
-//		input: takes a vector4 
+//		input: takes a vector3
 // Return:
 //		returns true or false
 //--------------------------------------------------------------------------------------
@@ -122,7 +122,7 @@ bool Vector3::operator> (const Vector3& rhs)
 // returns true or false depending on if the number is less than the other number
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3 
 // Return:
 //		returns true or false
 //--------------------------------------------------------------------------------------
@@ -134,7 +134,7 @@ bool Vector3::operator< (const Vector3& rhs)
 // returns true or false depending on if the number is equal to the other number
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns true or false
 //--------------------------------------------------------------------------------------
@@ -146,7 +146,7 @@ bool Vector3::operator==(const Vector3& rhs)
 // returns true or false depending on if the number does not equal to the other number
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns true or false
 //--------------------------------------------------------------------------------------
@@ -158,7 +158,7 @@ bool Vector3::operator!=(const Vector3& rhs)
 // returns true or false depending on if the number greater than or equal to the other number
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns true or false
 //--------------------------------------------------------------------------------------
@@ -170,7 +170,7 @@ bool Vector3::operator<=(const Vector3& rhs)
 // returns true or false depending on if the number less than or equal to the other number
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns true or false
 //--------------------------------------------------------------------------------------
@@ -182,7 +182,7 @@ bool Vector3::operator>=(const Vector3& rhs)
 //the cross product is a 
 //
 // Param:
-//		takes in a vector4 
+//		takes in a vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------
@@ -224,7 +224,6 @@ float Vector3::sqrMagnitude()
 }
 //--------------------------------------------------------------------------------------
 ////multiply by a factor that makes an integral equal to a desired value
-
 //
 // Param:
 //		Takes in a Vector4
@@ -375,10 +374,10 @@ Vector3::operator float*()
 	return &x;
 }
 //--------------------------------------------------------------------------------------
-//calculates the minimum of the vector4
+//calculates the minimum of the vector3
 //
 // Param:
-//		Takes in a Vector4
+//		Takes in a Vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------
@@ -403,10 +402,10 @@ Vector3 Vector3::min(const Vector3 & rhs)
 	return result;
 }
 //--------------------------------------------------------------------------------------
-//calculates the maximum of the vector4
+//calculates the maximum of the vector3
 //
 // Param:
-//		Takes in a Vector4
+//		Takes in a Vector3
 // Return:
 //		returns the result
 //--------------------------------------------------------------------------------------

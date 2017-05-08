@@ -1,5 +1,5 @@
 #include "Matrix4.h"
-
+#include "VectorCast.h"
 //--------------------------------------------------------------------------------------
 //Constructor
 //--------------------------------------------------------------------------------------
@@ -433,4 +433,21 @@ bool Matrix4::isIdentity()
 	}
 
 	return false;
+}
+
+void Matrix4::lookAt(Vector3 from, const Vector3 target, Vector3 up)
+{
+	Vector3 zaxis = from - target;
+	zaxis.Normalise();
+	Vector3 xaxis = zaxis.Cross(up);
+	xaxis.Normalise();
+	Vector3 yaxis = xaxis.Cross(zaxis);
+	yaxis.Normalise();
+
+	(*this)[0] = CastTo<Vector4>(xaxis);
+	(*this)[1] = CastTo<Vector4>(yaxis);
+	(*this)[2] = CastTo<Vector4>(zaxis);
+	(*this)[3] = CastTo<Vector4>(from);
+
+	m[3][3] = 1;
 }

@@ -18,37 +18,235 @@
 class Vector4
 {
 public:
+	//--------------------------------------------------------------------------------------
+	//Constructor
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4();
+	//--------------------------------------------------------------------------------------
+	//Constructor
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4(float newX, float newY, float newZ, float newW);
+	//--------------------------------------------------------------------------------------
+	//Deconstructor
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	~Vector4();
-
+	//--------------------------------------------------------------------------------------
+	// Adds two vector4s together
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 operator+(const Vector4 & rhs);
+	//--------------------------------------------------------------------------------------
+	// Subtracts two vector4s together
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 operator-(const Vector4 & rhs);
+	//--------------------------------------------------------------------------------------
+	// times two vector4s together
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 operator*(float rhs);
-	MATH_DLL	Vector4 posOperator();
-	MATH_DLL	Vector4 operator-();
-	MATH_DLL	Vector4 operator/(const float rhs);
-	MATH_DLL	Vector4 operator+=(const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// takes two equal-length sequences of numbers and returns a single number.
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	float Dot(Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// returns true or false depending on if the number is greater than the other number
+	//
+	// Param:
+	//		input: takes a vector4 
+	// Return:
+	//		returns true or false
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	bool operator> (const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// returns true or false depending on if the number is less than the other number
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns true or false
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	bool operator< (const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// returns true or false depending on if the number is equal to the other number
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns true or false
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	bool operator==(const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// returns true or false depending on if the number does not equal to the other number
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns true or false
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	bool operator!=(const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// returns true or false depending on if the number greater than or equal to the other number
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns true or false
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	bool operator<=(const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	// returns true or false depending on if the number less than or equal to the other number
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns true or false
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	bool operator>=(const Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	//the cross product is a 
+	//
+	// Param:
+	//		takes in a vector4 
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 Cross(Vector4& rhs);
-	MATH_DLL	Vector4 min(const Vector4 & rhs);
-	MATH_DLL	Vector4 max(const Vector4 & rhs);
-	MATH_DLL	Vector4 clamp(Vector4 & min, Vector4 & max);
+	//--------------------------------------------------------------------------------------
+	//How large an object is
+	//
+	// Param:
+	//		none
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	float Magnitude();
+	//--------------------------------------------------------------------------------------
+	//square of a magnitude
+	//
+	// Param:
+	//		none
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	float sqrMagnitude();
+	//--------------------------------------------------------------------------------------
+	//multiply by a factor that makes an integral equal to a desired value
+	//
+	// Param:
+	//		none
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	void Normalise();
+	//--------------------------------------------------------------------------------------
+	//normalise the magnitude
+	//
+	// Param:
+	//		Takes in a Vector4
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 Normalised(Vector4 & data);
+	//--------------------------------------------------------------------------------------
+	//positive number
+	//
+	// Param:
+	//		none
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 posOperator();
+	//--------------------------------------------------------------------------------------
+	//negative number
+	//
+	// Param:
+	//		none
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 operator-();
+	//--------------------------------------------------------------------------------------
+	//Divides two vectors
+	//
+	// Param:
+	//		Takes in a float
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 operator/(const float rhs);
+	//--------------------------------------------------------------------------------------
+	//short for x = x + y
+	//
+	// Param:
+	//		Takes in a Vector4
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 operator+=(const Vector4& rhs);
 	MATH_DLL	float& operator[](const int rhs);
 	MATH_DLL	operator float*();
-	MATH_DLL	float Magnitude();
-	MATH_DLL	float sqrMagnitude();
-	MATH_DLL	void Normalise();
-	MATH_DLL	float Dot(Vector4& rhs);
+	//--------------------------------------------------------------------------------------
+	//calculates the distance between two vector4s
+	//
+	// Param:
+	//		Takes in a Vector4
+	// Return:
+	//		returns the dist
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	float Distance(Vector4& rhs);
-	MATH_DLL	bool operator> (const Vector4& rhs);
-	MATH_DLL	bool operator< (const Vector4& rhs);
-	MATH_DLL	bool operator==(const Vector4& rhs);
-	MATH_DLL	bool operator!=(const Vector4& rhs);
-	MATH_DLL	bool operator<=(const Vector4& rhs);
-	MATH_DLL	bool operator>=(const Vector4& rhs);
-	
-	//Do you even swizzle
+	//--------------------------------------------------------------------------------------
+	//calculates the minimum of the vector4
+	//
+	// Param:
+	//		Takes in a Vector4
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 min(const Vector4 & rhs);
+	//--------------------------------------------------------------------------------------
+	//calculates the maximum of the vector4
+	//
+	// Param:
+	//		Takes in a Vector4
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 max(const Vector4 & rhs);
+	//--------------------------------------------------------------------------------------
+	//moves the point to the nearest available value.
+	//
+	// Param:
+	//		Takes in two Vector4s
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
+	MATH_DLL	Vector4 clamp(Vector4 & min, Vector4 & max);
+	//--------------------------------------------------------------------------------------
+	//Swizzles the elements of the vector, assigning differing values depending on the variables in the function name
+	//
+	// Param:
+	//		none
+	// Return:
+	//		returns the result
+	//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 xxxx();
 	MATH_DLL	Vector4 xxxy();
 	MATH_DLL	Vector4 xxxz();
@@ -311,5 +509,12 @@ public:
 	float z;
 	float w;
 };
-
+//--------------------------------------------------------------------------------------
+// times two vector4s together
+//
+// Param:
+//		takes in two vector4 
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 	MATH_DLL	Vector4 operator*(float lhs, const Vector4& rhs);

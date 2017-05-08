@@ -323,8 +323,8 @@ float Matrix3::Determinant(float Det)
 	float I = m[2][2];
 
 	return Det = A*(E*I - F*H)
-		- B*(D*I - F*G)
-		+ C*(D*H - E*G);
+   	   		   - B*(D*I - F*G)
+			   + C*(D*H - E*G);
 }
 //--------------------------------------------------------------------------------------
 //Checks if matrix is an identity matrix
