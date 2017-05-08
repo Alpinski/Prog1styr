@@ -1,6 +1,7 @@
 ﻿#pragma once
 #include "Vector3.h"
 #include "Vector2.h"
+#include "VectorCast.h"
 #define _USE_MATH_DEFINES
 #include <cmath>
 
@@ -29,6 +30,8 @@ public:
 	MATH_DLL	Matrix3 Transpose();
 	MATH_DLL	float Determinant(float Det);
 	MATH_DLL	bool isIdentity();
+	MATH_DLL	void lookAt(Vector3 from, const Vector3 target, Vector3 up);
+	MATH_DLL	void inverse();
 	MATH_DLL	void setRotationX(const float a);
 	MATH_DLL	void setRotationY(const float a);
 	MATH_DLL	void setRotationZ(const float z);

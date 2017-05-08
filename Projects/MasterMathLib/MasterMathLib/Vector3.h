@@ -1,5 +1,7 @@
 #pragma once
-
+#include <iostream>
+#define _USE_MATH_DEFINES
+#include <cmath>
 #ifdef STATIC_LIB//STATIC
 	#define MATH_DLL
 #else//DYNAMIC
@@ -16,28 +18,32 @@ public:
 	MATH_DLL	Vector3();
 	MATH_DLL	Vector3(float newX, float newY, float newZ);
 	MATH_DLL	~Vector3();
+
 	MATH_DLL	Vector3 operator+(const Vector3& rhs);
-	MATH_DLL	Vector3 operator-(const Vector3 & rhs);
+	MATH_DLL	Vector3 operator-(const Vector3& rhs);
 	MATH_DLL	Vector3 operator*(const float rhs);
 	MATH_DLL	Vector3 posOperator();
 	MATH_DLL	Vector3 operator-();
 	MATH_DLL	Vector3 operator/(const float rhs);
-	MATH_DLL	Vector3 operator+=(const Vector3 & rhs);
-	MATH_DLL	Vector3 Normalised(Vector3 data);
-	MATH_DLL	Vector3 Cross(Vector3 rhs);
-	MATH_DLL	float & operator[](const int rhs);	
+	MATH_DLL	Vector3 operator+=(const Vector3& rhs);
+	MATH_DLL	Vector3 Normalised(Vector3& data);
+	MATH_DLL	Vector3 Cross(Vector3& rhs);
+	MATH_DLL	Vector3 min(const Vector3& rhs);
+	MATH_DLL	Vector3 max(const Vector3& rhs);
+	MATH_DLL	Vector3 clamp(Vector3& min, Vector3 & max);
+	MATH_DLL	float& operator[](const int rhs);	
 	MATH_DLL	operator float*();
 	MATH_DLL	float Magnitude();
 	MATH_DLL	float sqrMagnitude();
 	MATH_DLL	void Normalise();
-	MATH_DLL	float Distance(Vector3 rhs);
-	MATH_DLL	float Dot(Vector3 rhs);
+	MATH_DLL	float Distance(Vector3& rhs);
+	MATH_DLL	float Dot(Vector3& rhs);
 	MATH_DLL	bool operator> (const Vector3& rhs);
 	MATH_DLL	bool operator< (const Vector3& rhs);
-	MATH_DLL	bool operator==(const Vector3 & rhs);
-	MATH_DLL	bool operator!=(const Vector3 & rhs);
-	MATH_DLL	bool operator<=(const Vector3 & rhs);
-	MATH_DLL	bool operator>=(const Vector3 & rhs);
+	MATH_DLL	bool operator==(const Vector3& rhs);
+	MATH_DLL	bool operator!=(const Vector3& rhs);
+	MATH_DLL	bool operator<=(const Vector3& rhs);
+	MATH_DLL	bool operator>=(const Vector3& rhs);
 
 	// Do you even swizzle
 	MATH_DLL	Vector3 xxx();
@@ -72,4 +78,4 @@ public:
 	float y;
 	float z;
 };
-	MATH_DLL	Vector3 operator*(float lhs, const Vector3 rhs);
+	MATH_DLL	Vector3 operator*(float lhs, const Vector3& rhs);

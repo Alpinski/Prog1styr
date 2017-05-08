@@ -1,6 +1,8 @@
 #include "Matrix4.h"
-#include <cmath>
-//zcx
+
+//--------------------------------------------------------------------------------------
+//Constructor
+//--------------------------------------------------------------------------------------
 Matrix4::Matrix4()
 {
 	m[0][0] = 1;
@@ -20,7 +22,9 @@ Matrix4::Matrix4()
 	m[2][3] = 0;
 	m[3][3] = 1;
 }
-
+//--------------------------------------------------------------------------------------
+//Constructor
+//--------------------------------------------------------------------------------------
 Matrix4::Matrix4(float xx, float xy, float xz, float xw, float yx, float yy, float yz, float yw, float zx, float zy, float zz, float zw, float wx, float wy, float wz, float ww)
 {
 	m[0][0] = xx;
@@ -40,11 +44,20 @@ Matrix4::Matrix4(float xx, float xy, float xz, float xw, float yx, float yy, flo
 	m[3][2] = wz;
 	m[3][3] = ww;
 }
-
+//--------------------------------------------------------------------------------------
+//Deconstructor
+//--------------------------------------------------------------------------------------
 Matrix4::~Matrix4()
 {
 }
-
+//--------------------------------------------------------------------------------------
+// Times matrix4 with Vector4
+//
+// Param:
+//		takes in a vector4
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Vector4 Matrix4::operator*(const Vector4& rhs)
 {
 	Vector4 result;
@@ -56,7 +69,14 @@ Vector4 Matrix4::operator*(const Vector4& rhs)
 
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+// Times two matrix3s together
+//
+// Param:
+//		takes in a matrix3
+// Return:
+//		returns the result
+//--------------------------------------------------------------------------------------
 Matrix4 Matrix4::operator*(const Matrix4& rhs)
 {
 	Matrix4 result;
@@ -83,7 +103,14 @@ Matrix4 Matrix4::operator*(const Matrix4& rhs)
 
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//sets rotation for the x axis
+//
+// Param:
+//		takes in a float
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setRotationX(const float a)
 {
 	m[0][0] = 1;
@@ -103,7 +130,14 @@ void Matrix4::setRotationX(const float a)
 	m[2][3] = 0;
 	m[3][3] = 1;
 }
-
+//--------------------------------------------------------------------------------------
+//sets rotation for the y axis
+//
+// Param:
+//		takes in a float
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setRotationY(const float a)
 {
 
@@ -124,7 +158,14 @@ void Matrix4::setRotationY(const float a)
 	m[2][3] = 0;
 	m[3][3] = 1;
 }
-
+//--------------------------------------------------------------------------------------
+//sets rotation for the z axis
+//
+// Param:
+//		takes in a float
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setRotationZ(const float a)
 {
 	m[0][0] = cosf(a);
@@ -144,7 +185,14 @@ void Matrix4::setRotationZ(const float a)
 	m[2][3] = 0;
 	m[3][3] = 1;
 }
-
+//--------------------------------------------------------------------------------------
+//sets the position 
+//
+// Param:
+//		takes in a vector3
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setPosition(const Vector3& rhs)
 {
 	m[0][0] = 1;
@@ -164,7 +212,14 @@ void Matrix4::setPosition(const Vector3& rhs)
 	m[2][3] = rhs.z;
 	m[3][3] = 1;
 }
-
+//--------------------------------------------------------------------------------------
+//gets the position 
+//
+// Param:
+//		takes in three floats
+// Return:
+//		returns result
+//--------------------------------------------------------------------------------------
 Vector3 Matrix4::getPosition(const float x, const float y, const float z)
 {
 	Vector3 result;
@@ -173,7 +228,14 @@ Vector3 Matrix4::getPosition(const float x, const float y, const float z)
 	result.z = m[2][3];
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//sets the scale 
+//
+// Param:
+//		takes in three floats
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setScale(const float x, const float y, const float z)
 {
 	m[0][0] = x;
@@ -193,7 +255,14 @@ void Matrix4::setScale(const float x, const float y, const float z)
 	m[2][3] = 0;
 	m[3][3] = 1;
 }
-
+//--------------------------------------------------------------------------------------
+//gets the scale 
+//
+// Param:
+//		takes in three floats
+// Return:
+//		returns result
+//--------------------------------------------------------------------------------------
 Vector3 Matrix4::getScale(const float x, const float y, const float z)
 {
 	Vector3 result;
@@ -202,19 +271,40 @@ Vector3 Matrix4::getScale(const float x, const float y, const float z)
 	result.z = m[2][2];
 	return result;
 }
-
+//--------------------------------------------------------------------------------------
+//sets rotation for x axis in degrees
+//
+// Param:
+//		takes in a float
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setRotationDegX(const float a)
 {
 	float rad = convertDegToRad(a);
 	setRotationX(rad);
 }
-
+//--------------------------------------------------------------------------------------
+//sets rotation for y axis in degrees
+//
+// Param:
+//		takes in a float
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setRotationDegY(const float a)
 {
 	float rad = convertDegToRad(a);
 	setRotationY(rad);
 }
-
+//--------------------------------------------------------------------------------------
+//sets rotation for z axis in degrees
+//
+// Param:
+//		takes in a float
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 void Matrix4::setRotationDegZ(const float a)
 {
 	float rad = convertDegToRad(a);
@@ -230,22 +320,42 @@ Matrix4::operator float*()
 {
 	return &m[0][0];
 }
-
+//--------------------------------------------------------------------------------------
+//converts radians to degrees
+//
+// Param:
+//		takes in a float
+// Return:
+//		returns Degree
+//--------------------------------------------------------------------------------------
 float Matrix4::convertRadToDeg(float Radian)
 {
 	float Degree;
 	Degree = Radian * (180.0f / M_PI);
 	return Degree;
 }
-
+//--------------------------------------------------------------------------------------
+//converts degrees to radians
+//
+// Param:
+//		takes in a float
+// Return:
+//		returns Radian
+//--------------------------------------------------------------------------------------
 float Matrix4::convertDegToRad(float Degree)
 {
 	float Radian;
 	Radian = Degree * (M_PI / 180.0f);
 	return Radian;
 }
-
-
+//--------------------------------------------------------------------------------------
+// interchanges each row and the corresponding column.
+//
+// Param:
+//		none
+// Return:
+//		none
+//--------------------------------------------------------------------------------------
 Matrix4 Matrix4::Transpose()
 {
 	for (int i = 0; i < 4; ++i)
@@ -284,7 +394,14 @@ float Matrix4::Determinant(float Det)
 
 	return Det;
 }
-
+//--------------------------------------------------------------------------------------
+//Checks if matrix is an identity matrix
+//
+// Param:
+//		none
+// Return:
+//		returns true or false
+//--------------------------------------------------------------------------------------
 bool Matrix4::isIdentity()
 {
 	int count = 0;
@@ -304,4 +421,21 @@ bool Matrix4::isIdentity()
 	}
 
 	return false;
+}
+
+void Matrix4::lookAt(Vector3 from, const Vector3 target, Vector3 up)
+{
+	Vector3 zaxis = from - target;
+	zaxis.Normalise();
+	Vector3 xaxis = zaxis.Cross(up);
+	xaxis.Normalise();
+	Vector3 yaxis = xaxis.Cross(zaxis);
+	yaxis.Normalise();
+
+	(*this)[0] = CastTo<Vector4>(xaxis);
+	(*this)[1] = CastTo<Vector4>(yaxis);
+	(*this)[2] = CastTo<Vector4>(zaxis);
+	(*this)[3] = CastTo<Vector4>(from);
+
+	m[3][3] = 1;
 }
