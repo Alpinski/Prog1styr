@@ -3,6 +3,7 @@
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
+#include "Player.h"
 
 class Application2D : public aie::Application {
 public:
@@ -21,6 +22,7 @@ protected:
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
 	aie::Audio*			m_audio;
+	Player*		m_player;
 
 	float m_cameraX, m_cameraY;
 	float m_timer;

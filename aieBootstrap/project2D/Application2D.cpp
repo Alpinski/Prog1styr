@@ -17,7 +17,7 @@ bool Application2D::startup()
 {
 	m_2dRenderer = new Renderer2D();
 
-
+	m_player = new Player();
 
 	m_font = new Font("./font/consolas.ttf", 32);
 
@@ -32,8 +32,10 @@ bool Application2D::startup()
 
 void Application2D::shutdown() 
 {
+
 	delete m_audio;
 	delete m_font;
+	delete m_player;
 	delete m_2dRenderer;
 }
 
@@ -68,6 +70,7 @@ void Application2D::update(float deltaTime)
 
 void Application2D::draw() 
 {
+	m_player->Draw(m_2dRenderer);
 	// wipe the screen to the background colour
 	clearScreen();
 

@@ -1,9 +1,2 @@
 ﻿  Player.cpp
-  main.cpp
-  Entity.cpp
-  CollisionManager.cpp
-c:\users\s171102\documents\github\prog1styr\aiebootstrap\project2d\collisionmanager.cpp(42): warning C4018: '<': signed/unsigned mismatch
-  Application2D.cpp
-  Generating Code...
-LINK : warning LNK4098: defaultlib 'MSVCRT' conflicts with use of other libs; use /NODEFAULTLIB:library
   Project2D.vcxproj -> C:\Users\s171102\Documents\GitHub\Prog1styr\aieBootstrap\temp\Project2D\Debug\Project2D.exe

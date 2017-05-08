@@ -1,12 +1,12 @@
 #include "Player.h"
 #include <math.h>
 #include <iostream>
-
+#include "Matrix3.h"
 
 
 Player::Player()
 {
-	m_shipTexture = new Texture("./textures/ship.png");
+	m_shipTexture = new Texture("./textures/car.png");
 }
 
 
@@ -30,6 +30,6 @@ Player::~Player()
 
 void Player::Draw(aie::Renderer2D * m_2dRenderer)
 {
-	m_2dRenderer->drawSpriteTransformed3x3(m_shipTexture, m_globalMatrix);
+	m_2dRenderer->drawSprite(m_shipTexture, 25, 25, 100, 100);
 
 }
