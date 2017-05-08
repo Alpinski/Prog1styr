@@ -11,9 +11,9 @@
 #include "Matrix4.h"
 #include "Texture.h"
 #include "Font.h"
-#include "Input.h"
+
 #include "Renderer2D.h"
-//#include "Physics.h"
+
 
 
 class Player : public Entity
@@ -25,7 +25,6 @@ public:
 	aie::Texture*		m_shipTexture;
 
 	void Update(float deltaTime);
-
 	void Draw(aie::Renderer2D * m_2dRenderer);
 };
 

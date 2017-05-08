@@ -2,6 +2,7 @@
 #include <math.h>
 #include <iostream>
 #include "Matrix3.h"
+#include "Input.h"
 
 
 Player::Player()
@@ -15,21 +16,24 @@ Player::~Player()
 	delete m_shipTexture;
 }
 
-//void Player::Update(Physics* pPhysics, float deltaTime)
-//{
-//	input* input = input::getInstance();
-//	vector2 pos;
-//
-//	if (input->isKeyDown(INPUT_KEY_W))
-//	{
-//		m_V2.velocity += direction * speed * deltaTime;
-//		position += velocity * deltaTime;
-//
-//	}
-//}
+void Player::Update(float deltaTime)
+{
+	Input* input = Input::getInstance();
+	Vector2 pos;
+
+	//if (input->isKeyDown(INPUT_KEY_W))
+	//{
+	//	m_V2.velocity += direction * speed * deltaTime;
+	//	position += velocity * deltaTime;
+
+	//}
+
+	transform();
+}
 
 void Player::Draw(aie::Renderer2D * m_2dRenderer)
 {
 	m_2dRenderer->drawSprite(m_shipTexture, 25, 25, 100, 100);
+	m_2dRenderer->begin();
 
 }
