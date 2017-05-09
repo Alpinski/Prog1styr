@@ -6,6 +6,7 @@ Entity::Entity()
 {
 	m_Collider.m_TL = Vector2(-30, -30);
 	m_Collider.m_BR = Vector2(30, 30);
+	m_Parent = nullptr;
 }
 
 
@@ -28,7 +29,7 @@ void Entity::Update()
 {
 }
 
-void Entity::Draw(aie::Renderer2D*    m_2dRenderer)
+void Entity::Draw(aie::Renderer2D* m_2dRenderer)
 {
 
 }

@@ -42,43 +42,21 @@ void Application2D::shutdown()
 void Application2D::update(float deltaTime) 
 {
 	m_timer += deltaTime;
-
-	// input example
-	Input* input = Input::getInstance();
-
-	// use arrow keys to move camera
-	if (input->isKeyDown(INPUT_KEY_UP))
-		m_cameraY += 500.0f * deltaTime;
-
-	if (input->isKeyDown(INPUT_KEY_DOWN))
-		m_cameraY -= 500.0f * deltaTime;
-
-	if (input->isKeyDown(INPUT_KEY_LEFT))
-		m_cameraX -= 500.0f * deltaTime;
-
-	if (input->isKeyDown(INPUT_KEY_RIGHT))
-		m_cameraX += 500.0f * deltaTime;
-
-	// example of audio
-	if (input->wasKeyPressed(INPUT_KEY_SPACE))
-		m_audio->play();
-
-	// exit the application
-	if (input->isKeyDown(INPUT_KEY_ESCAPE))
-		quit();
+	
+	m_player->Update(deltaTime);
 }
 
 void Application2D::draw() 
 {
-	m_player->Draw(m_2dRenderer);
 	// wipe the screen to the background colour
 	clearScreen();
 
 	// set the camera position before we begin rendering
-	m_2dRenderer->setCameraPos(m_cameraX, m_cameraY);
+	//m_2dRenderer->setCameraPos(m_cameraX, m_cameraY);
 
 	// begin drawing sprites
 	m_2dRenderer->begin();
+	m_player->Draw(m_2dRenderer);
 
 	// demonstrate spinning sprite
 	m_2dRenderer->setUVRect(0,0,1,1);

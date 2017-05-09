@@ -11,7 +11,6 @@
 #include "Matrix4.h"
 #include "Texture.h"
 #include "Font.h"
-
 #include "Renderer2D.h"
 
 
@@ -26,5 +25,13 @@ public:
 
 	void Update(float deltaTime);
 	void Draw(aie::Renderer2D * m_2dRenderer);
+
+private:
+	float Rotation;
+	float rotSpeed;
+	float Speed;
+	float Mass;
+	float drag;
+	
 };
 

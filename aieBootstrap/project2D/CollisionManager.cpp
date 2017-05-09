@@ -39,7 +39,7 @@ void CollisionManager::RemoveObject(Entity* pObject)
 
 bool CollisionManager::TestCollision(Entity* pObject)
 {
-	for (int i = 0; i < m_CollisionList.size(); ++i)
+	for (unsigned int i = 0; i < m_CollisionList.size(); ++i)
 	{
 		if (pObject == m_CollisionList[i])
 			continue;
