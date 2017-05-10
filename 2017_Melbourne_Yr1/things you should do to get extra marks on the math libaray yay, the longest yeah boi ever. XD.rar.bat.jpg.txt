@@ -1,8 +1,18 @@
 vectors
 
-
+sqrMagnitude
+Distance
 Lerp
-
+Max
+Min
+Operator /
+Operator ==
+Operator !=
+Operator >
+Operator <
+Operator >=
+Operator <=
+swizzling - HD
 Bezier 
 spline 
 hermites 
@@ -10,9 +20,13 @@ hermites
 
 matrix
 
-
+determiant - D
 inverse - D
-
+isIdentity
+transpose
 LookAt - HD
-
+setPos
+getPos
+setScale
+getScale
 getEuler - HD
