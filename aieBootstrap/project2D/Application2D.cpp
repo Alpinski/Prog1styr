@@ -17,7 +17,11 @@ bool Application2D::startup()
 {
 	m_2dRenderer = new Renderer2D();
 
+	
+
 	m_player = new Player();
+
+	m_backGround = new Texture("./Texture/SBG.PNG");
 
 	m_font = new Font("./font/consolas.ttf", 32);
 
@@ -33,6 +37,7 @@ bool Application2D::startup()
 void Application2D::shutdown() 
 {
 
+	delete m_backGround;
 	delete m_audio;
 	delete m_font;
 	delete m_player;
@@ -57,6 +62,10 @@ void Application2D::draw()
 	// begin drawing sprites
 	m_2dRenderer->begin();
 	m_player->Draw(m_2dRenderer);
+
+	/*m_2dRenderer->setRenderColour(1, 0, 1, 1);
+	m_2dRenderer->drawSprite(m_backGround, 0, 0, 1000,1000 );
+*/
 
 	// demonstrate spinning sprite
 	m_2dRenderer->setUVRect(0,0,1,1);

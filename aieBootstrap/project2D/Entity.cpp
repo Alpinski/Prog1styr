@@ -12,12 +12,14 @@ Entity::Entity()
 
 Entity::~Entity(){}
 
-void Entity::SetParent(Entity * sParent)
+void Entity::SetParent(Entity* sParent)
 {
+	m_Parent = sParent;
 }
 
 void Entity::SetChild(Entity * sChild)
 {
+
 }
 
 Collider& Entity::GetCollider()
@@ -47,7 +49,8 @@ void Entity::transform()
 Vector2 Entity::GetPosition()
 {
 	Vector2 Pos;
-	Pos.x = m_globalMatrix[2][0];
-	Pos.y = m_globalMatrix[2][1];
+	Pos.x = m_globalMatrix[2][0] - 960;
+	Pos.y = m_globalMatrix[2][1] - 540;
+
 	return Pos;
 }

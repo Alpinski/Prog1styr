@@ -12,7 +12,7 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Renderer2D.h"
-
+#include "Turret.h"
 
 
 class Player : public Entity
@@ -23,6 +23,7 @@ public:
 
 	aie::Texture*		m_shipTexture;
 
+
 	void Update(float deltaTime);
 	void Draw(aie::Renderer2D * m_2dRenderer);
 
@@ -32,6 +33,9 @@ private:
 	float Speed;
 	float Mass;
 	float drag;
+
+	Turret*		m_shield;
+
 	
 };
 

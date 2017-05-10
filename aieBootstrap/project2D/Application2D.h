@@ -1,5 +1,5 @@
 #pragma once
-
+#include "Turret.h"
 #include "Application.h"
 #include "Renderer2D.h"
 #include "Audio.h"
@@ -23,7 +23,7 @@ protected:
 	aie::Font*			m_font;
 	aie::Audio*			m_audio;
 	Player*		m_player;
-
+	Texture*	m_backGround;
 	float m_cameraX, m_cameraY;
 	float m_timer;
 };

@@ -29,14 +29,17 @@ public:
 	Collider& GetCollider();
 	Vector2 GetPosition();
 
+	
+
 protected:
 	aie::Texture*        m_shipTexture;
-
+	aie::Texture*		 m_shield;
 	Entity* m_Parent;
 	std::vector<Entity*> m_Child;
 
 	Matrix3 m_localMatrix;
 	Matrix3 m_globalMatrix;
+	
 	Vector2 pos;
 	Collider m_Collider;
 };
