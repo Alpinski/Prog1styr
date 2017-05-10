@@ -25,11 +25,11 @@ void Turret::Update(float deltaTime)
 	Vector2 Direction;
 	Direction = Vector2(0, 0);
 
-	if (input->isKeyDown(INPUT_KEY_A))
+	if (input->isKeyDown(INPUT_KEY_LEFT))
 	{
 		Rotation.x += rotSpeed * deltaTime;
 	}
-	if (input->isKeyDown(INPUT_KEY_D))
+	if (input->isKeyDown(INPUT_KEY_RIGHT))
 	{
 		Rotation.x -= rotSpeed *deltaTime;
 	}
