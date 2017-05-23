@@ -2,6 +2,7 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
+#include "ResourceManager.h"
 
 using namespace aie;
 
@@ -15,13 +16,15 @@ Application2D::~Application2D()
 
 bool Application2D::startup() 
 {
-	m_2dRenderer = new Renderer2D();
+	ResourceManager<Texture>::Create();
 
-	
+	m_pResourceManager = ResourceManager<Texture>::GetInstance();
+
+	m_2dRenderer = new Renderer2D();
 
 	m_player = new Player();
 
-	m_backGround = new Texture("./Texture/SBG.PNG");
+	m_backGround = m_pResourceManager->LoadResource("./Texture/SBG.PNG");
 
 	m_font = new Font("./font/consolas.ttf", 32);
 
@@ -36,8 +39,7 @@ bool Application2D::startup()
 
 void Application2D::shutdown() 
 {
-
-	delete m_backGround;
+	ResourceManager<Texture>::Destroy();
 	delete m_audio;
 	delete m_font;
 	delete m_player;

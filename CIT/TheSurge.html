@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BuyTheGame</title>
+		<link rel = "stylesheet" type = "text/css" href = "style.css"/>
+	</head>
+	<body>
+		<script src = "main.js"></script>
+		<div id="container">
+			<div id = "header1">
+				<h1>The Surge</h1>
+			</div>
+			<span id="content1">
+				<img src="Surge.jpg" alt="Surge" style="width:500px;height:250px;">
+			</span>	
+			<span id="content2">
+				<img src="Buy.png" alt="buybutton" style="width:460px;height:215px;">
+				<p> $79.95 </p>
+			</span>	
+			<form class = "myForm" onSubmit = "onSubmit(this); return false;">
+ 			<input type="text" id="fname" name="fname" placeholder="First Name..."required>
+			<input type="text" id="lname" name="lname" placeholder="Last Name...">
+			<div>
+			<input type="text" id="pCode" name="pCode" placeholder="Post Code...">
+			<input type="text" id="address" name="address" placeholder="Address...">
+			</div>
+			<input type="text" id="cno" name="cno" placeholder="Credit Card Number...">
+			<input type="text" id="cexp" name="cexp" placeholder="Expiry Date...">
+			<input id = "Submit" type = "submit" />
+			</form>
+			<select name="state " id="State">
+			<option selected>VIC</option>
+      		<option>NSW 
+        	<option>QLD 
+        	<option>WAS
+        	<option>TAS 
+        	<option>ACT
+        	<option>NT
+			</select>
+			<div id = "footer">
+				<p> A catastrophic event has knocked you out during the first day on the job… </p>
+				<p>you wake up equipped with a heavy-grade exoskeleton, in a destroyed section of the complex. </p>
+				<p>Robots gone haywire, insane augmented co-workers and rogue AI - everything wants you dead.</p>
+				<p>Defy deadly enemies and huge bosses in tight, visceral melee combat. </p>
+				<p>Target and slice specific limbs off your foes, with a next-gen loot system where you loot what you dismember.</p>
+				<p>Equip, upgrade and craft new weapons and armors sliced from enemies, and make yourself stronger through a fresh take on leveling-up.</p>
+			</div>		
+
+	</body>
+</html>

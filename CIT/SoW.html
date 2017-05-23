@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>BuyTheGame</title>
+		<link rel = "stylesheet" type = "text/css" href = "style.css"/>
+	</head>
+	<body>
+		<script src = "main.js"></script>
+		<div id="container">
+			<div id = "header1">
+				<h1>Shadow of War</h1>
+			</div>
+			<span id="content1">
+				<img src="SoW.png" alt="sow" style="float:center;width:500px;height:250px;">
+			</span>	
+			<span id="content2">
+				<img src="Buy.png" alt="buybutton" style="width:460px;height:215px;">
+				<p> $79.95 </p>
+			</span>	
+			<form class = "myForm" onSubmit = "onSubmit(this); return false;">
+ 			<input type="text" id="fname" name="fname" placeholder="First Name..."required>
+			<input type="text" id="lname" name="lname" placeholder="Last Name...">
+			<div>
+			<input type="text" id="pCode" name="pCode" placeholder="Post Code...">
+			<input type="text" id="address" name="address" placeholder="Address...">
+			</div>
+			<input type="text" id="cno" name="cno" placeholder="Credit Card Number...">
+			<input type="text" id="cexp" name="cexp" placeholder="Expiry Date...">
+			<input id = "Submit" type = "submit" />
+			</form>
+			<select name="state " id="State">
+			<option selected>VIC</option>
+      		<option>NSW 
+        	<option>QLD 
+        	<option>WAS
+        	<option>TAS 
+        	<option>ACT
+        	<option>NT
+			</select>
+			<div id = "footer">
+				<p>Humanity�s last safe city has fallen to an overwhelming invasion force, led by Ghaul, the imposing commander of the brutal Red Legion. 					</p>
+				<p>He has stripped the city�s Guardians of their power and forced the survivors to flee.  																	</p>
+				<p>You will venture to mysterious, unexplored worlds of our solar system to discover an arsenal of weapons and devastating new combat abilities.			</p>
+				<p>To defeat the Red Legion and confront Ghaul, you must reunite humanity�s scattered heroes, stand together and fight back to reclaim our home.			</p>
+			</div>		
+
+	</body>
+</html>

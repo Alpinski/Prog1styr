@@ -4,6 +4,7 @@
 #include "Renderer2D.h"
 #include "Audio.h"
 #include "Player.h"
+#include "ResourceManager.h"
 
 class Application2D : public aie::Application {
 public:
@@ -22,6 +23,7 @@ protected:
 	aie::Renderer2D*	m_2dRenderer;
 	aie::Font*			m_font;
 	aie::Audio*			m_audio;
+	ResourceManager<aie::Texture>*	m_pResourceManager;
 	Player*		m_player;
 	Texture*	m_backGround;
 	float m_cameraX, m_cameraY;

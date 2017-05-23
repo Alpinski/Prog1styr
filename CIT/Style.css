@@ -1,0 +1,59 @@
+body
+{
+	background-color: #000000;
+	color: white;
+	font-family:Helvetica, Arial;
+}
+
+#footer
+{
+	position: relative;
+	right: -422px;
+	width: 460px;
+	float: center;
+}
+
+#header
+{
+	text-align: center;
+}
+
+#header1
+{
+	position: relative;
+	right: -575px;
+	text-align: left;
+}
+
+#content
+{	
+	text-align: center;
+	display: block
+}
+
+#content1
+{	
+	position: relative;
+	right: -400px;
+	float: left;
+}
+
+#content2
+{	
+	position: relative;
+	bottom: -200px;
+	right: -516px;
+	float: left;
+}
+
+input[type=text] 
+{
+	position: relative;
+	right: 0px;
+    width: 15%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+	border: 2px solid dimgrey;
+    border-radius: 10px;
+}

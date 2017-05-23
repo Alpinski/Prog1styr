@@ -7,7 +7,7 @@
 
 Player::Player()
 {
-	m_shipTexture = new Texture("./textures/Turret.png");
+	m_shipTexture = new Texture("./textures/ship.png");
 	//m_Parent->m_shipTexture;
 
 	Speed = 1000.0f;
