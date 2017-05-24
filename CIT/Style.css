@@ -25,6 +25,15 @@ body
 	text-align: left;
 }
 
+#myimage
+{
+	position: relative;
+	right: -0px;
+	bottom: 0px;
+	width: 460px;
+
+}
+
 #content
 {	
 	text-align: center;
