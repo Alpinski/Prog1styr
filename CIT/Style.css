@@ -9,10 +9,16 @@ body
 {
 	position: relative;
 	right: -422px;
+	bottom: 100;
 	width: 460px;
-	float: center;
+
 }
 
+#mooney
+{
+	position: relative:
+	right: -400;
+}
 #header
 {
 	text-align: center;
@@ -29,7 +35,7 @@ body
 {
 	position: relative;
 	right: -0px;
-	bottom: 0px;
+	bottom: -20px;
 	width: 460px;
 
 }
@@ -38,6 +44,11 @@ body
 {	
 	text-align: center;
 	display: block
+}
+#State
+{
+	position: relative;
+	right: -450px;
 }
 
 #content1
