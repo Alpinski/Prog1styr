@@ -107,6 +107,8 @@
     <ClInclude Include="Collider.h" />
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="Graph.h" />
+    <ClInclude Include="GraphNode.h" />
     <ClInclude Include="Menu.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="ResourceManager.h" />
