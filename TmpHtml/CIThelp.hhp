@@ -1,0 +1,38 @@
+[OPTIONS]
+Language=0x0c09
+Default Font=Arial,8,0
+TITLE=CIThelp
+Full-text search=Yes
+Display compile notes=YES
+Display compile progress=YES
+Compatibility=1.1
+Auto Index=No
+Default Window=Main
+Compiled file=CIThelp.chm
+Error Log file=CIThelp.log
+Contents file=CIThelp.hhc
+Index File=CIThelp.hhk
+Default Topic=about.html
+[FILES]
+about.html
+support.html
+order.html
+gamesaregood4u.html
+help.png
+nexttopic.png
+prevtopic.png
+[WINDOWS]
+Main=,"CIThelp.hhc","CIThelp.hhk","about.html","about.html",,,,,0x061520,200,0x00304E,[50,50,850,450],0x307e,,,,,,,,0
+[ALIAS]
+about=about.html
+support=support.html
+order=order.html
+gettingstarted=gettingstarted.html
+mainmenu=mainmenu.html
+toolbar=toolbar.html
+tutorial=tutorial.html
+task1=task1.html
+task2=task2.html
+gamesaregood4u=gamesaregood4u.html
+[MAP]
+#include CIThelp.h

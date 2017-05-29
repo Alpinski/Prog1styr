@@ -12,22 +12,20 @@
 			</div>
 			<span id="content1">
 				<img src="Destiny2.jpg" alt="Destiny" style="float:center;width:500px;height:250px;">
-			</span>	
-			<span id="content2">
-				<img src="Buy.png" alt="buybutton" style="width:460px;height:215px;">
 				<p> $79.95 </p>
 			</span>	
 			<form class = "myForm" onSubmit = "onSubmit(this); return false;">
- 			<input type="text" id="fname" name="fname" placeholder="First Name..."required>
-			<input type="text" id="lname" name="lname" placeholder="Last Name..."required>
+ 			<input type="text" id="fname" name="fname" placeholder="First Name..."required style = "right:-450px";>
+			<input type="text" id="lname" name="lname" placeholder="Last Name..."required style = "right:-450px";>
 			<div>
-			<input type="text" id="pCode" name="pCode" placeholder="Post Code..."required>
-			<input type="text" id="address" name="address" placeholder="Address..."required>
+			<input type="text" id="pCode" name="pCode" placeholder="Post Code..."required style = "right:-450px";>
+			<input type="text" id="address" name="address" placeholder="Address..."required style = "right:-450px";>
 			</div>
-			<input type="text" id="cno" name="cno" placeholder="Credit Card Number..."required>
-			<input type="text" id="cexp" name="cexp" placeholder="Expiry Date..."required>
-			<input id = "Submit" type = "submit" />
-			</form>
+			<div>
+			<input type="text" id="cno" name="cno" placeholder="Credit Card Number..."required style = "right:-450px";>
+			<input type="text" id="cexp" name="cexp" placeholder="Expiry Date..."required style = "right:-450px";>
+			</div>
+			<div>
 			<select name="state " id="State">
 			<option selected>VIC</option>
       		<option>NSW 
@@ -37,6 +35,11 @@
         	<option>ACT
         	<option>NT
 			</select>
+			</div>
+			<div>
+			<input id = "myimage" type = "image" src = "Buy.png" style = "right:-450px; top: 200";/>
+			</div>
+			</form>
 			<div id = "footer">
 				<p>Humanity’s last safe city has fallen to an overwhelming invasion force, led by Ghaul, the imposing commander of the brutal Red Legion. 					</p>
 				<p>He has stripped the city’s Guardians of their power and forced the survivors to flee.  																	</p>
