@@ -18,13 +18,45 @@
 class Player : public Entity
 {
 public:
+	//--------------------------------------------------
+	//Default constructor
+	//Creates the Player and sets it as parent
+	//
+	//Parameters:
+	//			None
+	//Returns:
+	//		None
+	//--------------------------------------------------
 	Player();
+	//--------------------------------------------------
+	//Default destructor
+	//Deletes the player
+	//
+	//Parameters:
+	//			None
+	//Returns:
+	//		None
+	//--------------------------------------------------
 	~Player();
 
 	aie::Texture*		m_shipTexture;
-
-
+	//--------------------------------------------------
+	//Updates the player movements and collisions
+	//
+	//Parameters:
+	//			Takes in a float
+	//Returns:
+	//		None
+	//--------------------------------------------------
 	void Update(float deltaTime);
+	//--------------------------------------------------
+	//Draws the Player and sets camera postion
+	//
+	//Parameters:
+	//			takes in Renderer2D
+	//Returns:
+	//		None
+	//--------------------------------------------------
 	void Draw(aie::Renderer2D * m_2dRenderer);
 
 private:
@@ -35,7 +67,5 @@ private:
 	float drag;
 
 	Turret*		m_shield;
-
-	
 };
 

@@ -1,6 +1,15 @@
-﻿  Application2D.cpp
-  Generating Code...
-  Compiling...
+﻿  Turret.cpp
+  StateMachine.cpp
+l:\prog1styr\aiebootstrap\project2d\stack.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+l:\prog1styr\aiebootstrap\project2d\statemachine.cpp(8): error C2512: 'DynamicArray<BaseState *>': no appropriate default constructor available
+  l:\prog1styr\aiebootstrap\project2d\statemachine.h(21): note: see declaration of 'DynamicArray<BaseState *>'
+l:\prog1styr\aiebootstrap\project2d\statemachine.cpp(26): error C2660: 'BaseState::OnUpdate': function does not take 1 arguments
+  Player.cpp
   main.cpp
+  Entity.cpp
+  CollisionManager.cpp
+  Blocker.cpp
+  BaseState.cpp
+  Asteroid.cpp
+  Application2D.cpp
   Generating Code...
-  Project2D.vcxproj -> L:\Prog1styr\aieBootstrap\temp\Project2D\Debug\Project2D.exe
