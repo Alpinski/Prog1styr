@@ -97,6 +97,7 @@
     <ClCompile Include="Blocker.cpp" />
     <ClCompile Include="CollisionManager.cpp" />
     <ClCompile Include="Entity.cpp" />
+    <ClCompile Include="LoadState.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="StateMachine.cpp" />
@@ -111,6 +112,7 @@
     <ClInclude Include="CollisionManager.h" />
     <ClInclude Include="DynamicArray.h" />
     <ClInclude Include="Entity.h" />
+    <ClInclude Include="LoadState.h" />
     <ClInclude Include="player.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Turret.h" />

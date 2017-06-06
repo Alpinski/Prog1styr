@@ -43,6 +43,9 @@ bool Application2D::startup()
 	m_cameraY = 0;
 	m_timer = 0;
 
+	
+
+
 
 
 	return true;
