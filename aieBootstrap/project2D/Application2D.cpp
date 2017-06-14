@@ -2,7 +2,8 @@
 #include "Texture.h"
 #include "Font.h"
 #include "Input.h"
-
+#include "StateMachine.h"
+#include "LoadState.h"
 
 using namespace aie;
 
@@ -43,9 +44,10 @@ bool Application2D::startup()
 	m_cameraY = 0;
 	m_timer = 0;
 
-	
-
-
+	m_LoadState->OnEnter();
+	m_LoadState->OnUpdate(0,0);
+	m_LoadState->OnDraw(0);
+	m_LoadState->OnExit();
 
 
 	return true;
@@ -79,7 +81,8 @@ void Application2D::shutdown()
 void Application2D::update(float deltaTime) 
 {
 	m_timer += deltaTime;
-	
+
+	m_StateMachine->Update(deltaTime, 0);
 	m_player->Update(deltaTime);
 	m_rock->Update(deltaTime);
 }

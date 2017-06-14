@@ -1,5 +1,5 @@
 #pragma once
-#include "DynamicArray.h";
+#include "DynamicArray.h"
 
 template<typename T>
 class Stack

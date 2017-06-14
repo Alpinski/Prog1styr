@@ -59,6 +59,8 @@ protected:
 	Blocker*			m_blocker;
 	Player*				m_player;
 	Texture*			m_backGround;
+	StateMachine*		m_StateMachine;
+	LoadState*			m_LoadState;
 
 	float m_cameraX, m_cameraY;
 	float m_timer;

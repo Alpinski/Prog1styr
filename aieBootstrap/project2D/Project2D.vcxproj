@@ -114,6 +114,9 @@
     <ClInclude Include="Entity.h" />
     <ClInclude Include="LoadState.h" />
     <ClInclude Include="player.h" />
+    <ClInclude Include="Resource.h" />
+    <ClInclude Include="ResourceManager.h" />
+    <ClInclude Include="Stack.h" />
     <ClInclude Include="StateMachine.h" />
     <ClInclude Include="Turret.h" />
   </ItemGroup>
