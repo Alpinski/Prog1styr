@@ -1,25 +1,17 @@
-﻿  Turret.cpp
-  StateMachine.cpp
-l:\prog1styr\aiebootstrap\project2d\stack.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-l:\prog1styr\aiebootstrap\project2d\stack.h(41): error C2440: 'return': cannot convert from 'DynamicArray<BaseState *>' to 'BaseState *'
-  l:\prog1styr\aiebootstrap\project2d\stack.h(41): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
-  l:\prog1styr\aiebootstrap\project2d\stack.h(39): note: while compiling class template member function 'BaseState Stack<BaseState *>::Top(void)'
-  l:\prog1styr\aiebootstrap\project2d\statemachine.cpp(27): note: see reference to function template instantiation 'BaseState Stack<BaseState *>::Top(void)' being compiled
-  l:\prog1styr\aiebootstrap\project2d\statemachine.h(22): note: see reference to class template instantiation 'Stack<BaseState *>' being compiled
-  Player.cpp
-  main.cpp
+﻿  main.cpp
 l:\prog1styr\aiebootstrap\project2d\application2d.h(62): error C2143: syntax error: missing ';' before '*'
 l:\prog1styr\aiebootstrap\project2d\application2d.h(62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 l:\prog1styr\aiebootstrap\project2d\application2d.h(62): error C2238: unexpected token(s) preceding ';'
 l:\prog1styr\aiebootstrap\project2d\application2d.h(63): error C2143: syntax error: missing ';' before '*'
 l:\prog1styr\aiebootstrap\project2d\application2d.h(63): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 l:\prog1styr\aiebootstrap\project2d\application2d.h(63): error C2238: unexpected token(s) preceding ';'
-  LoadState.cpp
-  Entity.cpp
-  CollisionManager.cpp
-  Blocker.cpp
-  BaseState.cpp
-  Asteroid.cpp
+  StateMachine.cpp
+l:\prog1styr\aiebootstrap\project2d\stack.h(41): error C2440: 'return': cannot convert from 'DynamicArray<BaseState *>' to 'BaseState *'
+  l:\prog1styr\aiebootstrap\project2d\stack.h(41): note: No user-defined-conversion operator available that can perform this conversion, or the operator cannot be called
+  l:\prog1styr\aiebootstrap\project2d\stack.h(39): note: while compiling class template member function 'BaseState Stack<BaseState *>::Top(void)'
+  l:\prog1styr\aiebootstrap\project2d\statemachine.cpp(27): note: see reference to function template instantiation 'BaseState Stack<BaseState *>::Top(void)' being compiled
+  l:\prog1styr\aiebootstrap\project2d\statemachine.h(22): note: see reference to class template instantiation 'Stack<BaseState *>' being compiled
+  Player.cpp
   Application2D.cpp
 l:\prog1styr\aiebootstrap\project2d\application2d.h(62): error C2143: syntax error: missing ';' before '*'
 l:\prog1styr\aiebootstrap\project2d\application2d.h(62): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
@@ -27,23 +19,19 @@ l:\prog1styr\aiebootstrap\project2d\application2d.h(62): error C2238: unexpected
 l:\prog1styr\aiebootstrap\project2d\application2d.h(63): error C2143: syntax error: missing ';' before '*'
 l:\prog1styr\aiebootstrap\project2d\application2d.h(63): error C4430: missing type specifier - int assumed. Note: C++ does not support default-int
 l:\prog1styr\aiebootstrap\project2d\application2d.h(63): error C2238: unexpected token(s) preceding ';'
-l:\prog1styr\aiebootstrap\project2d\stack.h(2): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(29): error C2065: 'm_StateMachine': undeclared identifier
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(47): error C2065: 'm_LoadState': undeclared identifier
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(47): error C2227: left of '->OnEnter' must point to class/struct/union/generic type
+  l:\prog1styr\aiebootstrap\project2d\application2d.cpp(47): note: type is 'unknown-type'
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(48): error C2065: 'm_LoadState': undeclared identifier
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(48): error C2227: left of '->OnUpdate' must point to class/struct/union/generic type
+  l:\prog1styr\aiebootstrap\project2d\application2d.cpp(48): note: type is 'unknown-type'
 l:\prog1styr\aiebootstrap\project2d\application2d.cpp(49): error C2065: 'm_LoadState': undeclared identifier
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(49): error C2227: left of '->OnEnter' must point to class/struct/union/generic type
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(49): error C2227: left of '->OnDraw' must point to class/struct/union/generic type
   l:\prog1styr\aiebootstrap\project2d\application2d.cpp(49): note: type is 'unknown-type'
 l:\prog1styr\aiebootstrap\project2d\application2d.cpp(50): error C2065: 'm_LoadState': undeclared identifier
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(50): error C2227: left of '->OnUpdate' must point to class/struct/union/generic type
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(50): error C2227: left of '->OnExit' must point to class/struct/union/generic type
   l:\prog1styr\aiebootstrap\project2d\application2d.cpp(50): note: type is 'unknown-type'
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(51): error C2065: 'm_LoadState': undeclared identifier
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(51): error C2227: left of '->OnDraw' must point to class/struct/union/generic type
-  l:\prog1styr\aiebootstrap\project2d\application2d.cpp(51): note: type is 'unknown-type'
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(52): error C2065: 'm_LoadState': undeclared identifier
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(52): error C2227: left of '->OnExit' must point to class/struct/union/generic type
-  l:\prog1styr\aiebootstrap\project2d\application2d.cpp(52): note: type is 'unknown-type'
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(67): error C2065: 'm_StateMachine': undeclared identifier
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(67): error C2541: 'delete': cannot delete objects that are not pointers
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(88): error C2065: 'm_StateMachine': undeclared identifier
-l:\prog1styr\aiebootstrap\project2d\application2d.cpp(88): error C2227: left of '->Update' must point to class/struct/union/generic type
-  l:\prog1styr\aiebootstrap\project2d\application2d.cpp(88): note: type is 'unknown-type'
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(85): error C2065: 'm_StateMachine': undeclared identifier
+l:\prog1styr\aiebootstrap\project2d\application2d.cpp(85): error C2227: left of '->Update' must point to class/struct/union/generic type
+  l:\prog1styr\aiebootstrap\project2d\application2d.cpp(85): note: type is 'unknown-type'
   Generating Code...
